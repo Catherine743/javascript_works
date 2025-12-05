@@ -1,4 +1,4 @@
-var sent = "hello world"
+var sent = "hello world";
 
 console.log("Enter a sentence:");
 console.log(`${sent}`);
