@@ -1,19 +1,12 @@
-var sent = "You are amazing!";
-
+var sent = "hello";
 
 console.log("Enter a sentence:");
 console.log(`${sent}`);
 
-var cleaned = sent.replace(/[^a-zA-Z ]/g, "");
-var words = cleaned.split(" ");
-var i = 0;
-
-while (i < words.length) {
-    if (words[i] == "dumb" || words[i] == "stupid") {
-        console.log("Please be polite!");
-
-    }
-    i++;
+if(sent == "dumb" || sent == "stupid"){
+    console.log("Please be polite!");
+    
 }
-
-console.log("Enter a sentence:");
+else{
+    console.log("Enter a sentence:");
+}
