@@ -1,4 +1,4 @@
-var giggles = "yes"
+var giggles = "yes";
 
 console.log("Are you still giggling? (yes/no)");
 console.log(`${giggles}`);
