@@ -8,4 +8,4 @@ for(i = 0; i < count; i++){
     }
 }
 
-console.log(`Largest number of arr is ${max}`);
+console.log(`Largest number of array is ${max}`);
