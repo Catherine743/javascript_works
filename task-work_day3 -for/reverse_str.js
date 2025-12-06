@@ -11,7 +11,7 @@ for(i = count-1; i >= 0; i--){
 
 
 string = reverse.join("");
-console.log(string);
+console.log(`Reverse of ${str} is ${string}`);
 
 
 
