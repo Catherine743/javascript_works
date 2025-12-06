@@ -8,4 +8,4 @@ for(i = 0; i < count; i++){
         j++;
     }
 }
-console.log(j);
+console.log(`Count of vowels in a string is ${j}`);
