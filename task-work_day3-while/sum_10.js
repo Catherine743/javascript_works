@@ -6,4 +6,4 @@ while (i <= 10){
     i++;
 }
 
-console.log(sum);
+console.log(`Sum of first 10 natural numbers is ${sum}`);
