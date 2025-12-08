@@ -15,6 +15,18 @@ console.log(`Reverse of ${str} is ${string}`);
 
 // string = str.split("").reverse().join("")
 
+// let str = "HELLO";
+// let reverse = "";
+
+// for (let ch of str) {
+//     reverse = ch + reverse; 
+// }
+
+// console.log(reverse);  
+
+
+
+
 
 
 

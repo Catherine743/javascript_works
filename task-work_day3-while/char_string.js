@@ -7,3 +7,10 @@ while (i < num){
     console.log(char[i]);
     i++; 
 }
+
+// str = "HELLO";
+
+// for(let ch of str){
+//     console.log(ch);
+    
+// }

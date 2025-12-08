@@ -1,7 +1,7 @@
 var vCount = 0;
 var cCount = 0;
 var text = "Hello Javascript";
-text.toLowerCase();
+text = text.toLowerCase();
 
 for(let ch of text){
     if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){
