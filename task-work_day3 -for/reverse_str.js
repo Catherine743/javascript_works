@@ -13,6 +13,8 @@ for(i = count-1; i >= 0; i--){
 string = reverse.join("");
 console.log(`Reverse of ${str} is ${string}`);
 
+// string = str.split("").reverse().join("")
+
 
 
 
