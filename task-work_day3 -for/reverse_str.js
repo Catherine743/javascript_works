@@ -1,6 +1,6 @@
 str = "HELLO";
 count = str.length;
-reverse = []
+reverse = [];
 j = 0;
 
 
