@@ -1,10 +1,7 @@
-row = 4;
-col = 4
-
-for(r = 1; r <= row; r++){
+for(r = 1; r <= 4; r++){
     pattern = "";
-    for(c = 1; c <= col; c++){
-        if(r == 1 || c == 1 || r == row || c == col){
+    for(c = 1; c <= 4; c++){
+        if(r == 1 || c == 1 || r == 4 || c == 4){
         pattern = pattern + "R\t"
         }
         else{
