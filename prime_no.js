@@ -1,4 +1,5 @@
 var num = 29;
+pattern = "";
 
 for (var prime = 2; prime <= num; prime++) {
     var isPrime = true;
@@ -9,8 +10,14 @@ for (var prime = 2; prime <= num; prime++) {
             break;
         }
     }
+
     if (isPrime) {
-        console.log(prime);
+        // console.log(prime);
+
+        res = `${prime} `
+        pattern = pattern + res;
 
     }
+    
 }
+console.log(pattern);
