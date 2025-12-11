@@ -1,5 +1,5 @@
 let row = 5;
-let col = 9; // total columns to fit the pyramid
+let col = 9; 
 let center = Math.floor(col / 2);
 
 for (let r = row; r >= 1; r--) {
