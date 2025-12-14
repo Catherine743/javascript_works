@@ -11,7 +11,6 @@ if (word1.length != word2.length) {
         let count2 = 0;
         let ch = word1[i];
 
-        // skip already checked characters
         let alreadyChecked = false;
         for (let k = 0; k < i; k++) {
             if (word1[k] == ch) {
@@ -21,7 +20,6 @@ if (word1.length != word2.length) {
         }
         if (alreadyChecked) continue;
 
-        // count in word1
         for (let j = 0; j < word1.length; j++) {
             if (word1[j] == ch) count1++;
             if (word2[j] == ch) count2++;
@@ -33,5 +31,5 @@ if (word1.length != word2.length) {
         }
     }
 
-    console.log(isAnagram ? "Anagrams" : "Not anagrams");
+    console.log(isAnagram ? `${word1} and ${word2} are anagrams` : `${word1} and ${word2} are not anagrams`);
 }
