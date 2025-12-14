@@ -1,4 +1,4 @@
-num = 2301;
+num = 5276;
 var sm;
 
 while(num != 0){
@@ -14,4 +14,4 @@ while(num != 0){
     num = Math.floor(num / 10);
 }
 
-console.log(sm);
+console.log(`Smallest digit of number ${num} is ${sm}`);
