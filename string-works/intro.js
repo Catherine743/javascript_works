@@ -1,5 +1,6 @@
 var companyName = "Luminar Technolab";
                //  01234567890123456
+                           // -3-2-1 
 
 console.log(companyName.length); 
 
