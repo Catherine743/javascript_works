@@ -17,7 +17,7 @@ for (let i = 0; i <= sent.length; i++) { // s,e,a," "
     }
 }
 
-console.log(`No of words of word ${word} is ${count}`);
+console.log(`No of words in sent is ${count}`);
 
 
 
