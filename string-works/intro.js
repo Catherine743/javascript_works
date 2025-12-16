@@ -17,7 +17,7 @@ console.log(companyName.concat(".com", ".edu"));
 console.log(companyName.concat(123));
 
 console.log(companyName.slice(0,7));
-console.log(companyName.slice(8));
+console.log(companyName.slice(8)); // negative value accept
 console.log(companyName.slice(-3,));
 
 console.log(companyName.substring(8,17));

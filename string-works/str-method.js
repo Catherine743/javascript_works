@@ -15,6 +15,7 @@ console.log(newText);
 var newTxt = text.replaceAll("#"," "); // replace all it wherever "#" is seen
 console.log(newTxt);
 
+//indexOf
 
 
 
