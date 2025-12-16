@@ -12,8 +12,12 @@ else {
         }
     }
 }
-
-return isAnagram;
+if(isAnagram){
+    return `${word1} and ${word2} are anagrams`
+}
+else{
+    return `${word1} and ${word2} are not anagrams`
+}
 }
 
 console.log(isAnagram("listen","silent"));

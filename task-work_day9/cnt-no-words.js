@@ -1,18 +1,17 @@
-let sent = "sea seashore sea";
-let words = sent.trim().split(" ");
-let count = {};
+sent = "sea seashore sea";
+word = "sea";
+count = 0
+used = "";
 
-for (let w of words) {
-    for (let i = 0; i < w.length; i++) {
-        for (let j = i + 1; j <= w.length; j++) {
-            let sub = w.slice(i, j);
-            if (count[sub] == undefined) {
-                count[sub] = 1;
-            } else {
-                count[sub]++;
-            }
+for(let ch of sent){
+    for(i = 0; i < word.length; i++){
+        if (ch == word[0]){
+            used = used + word[0];
         }
+    }
+    if(used == word){
+        count++;
     }
 }
 
-console.log(count["sea"]); 
+
