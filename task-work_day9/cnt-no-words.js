@@ -1,17 +1,26 @@
-sent = "sea seashore sea";
-word = "sea";
-count = 0
-used = "";
+let sent = "sea seashore";
+let word = "sea";
+let count = 0;
 
-for(let ch of sent){
-    for(i = 0; i < word.length; i++){
-        if (ch == word[0]){
-            used = used + word[0];
+for (let i = 0; i <= sent.length; i++) { // s,e,a," "
+    let match = true; // match = true
+
+    for (let j = 0; j < word.length; j++) { // s,e,a
+        if (sent[i + j] != word[j]) { // (0+1s != s => F,e != e => F,a != a => F,
+            match = false;
+            break;
         }
     }
-    if(used == word){
+
+    if (match) {
         count++;
     }
 }
+
+console.log(count);
+
+
+
+
 
 
