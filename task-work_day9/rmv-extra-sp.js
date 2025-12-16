@@ -5,7 +5,8 @@ for (let ch of sent) {
     if (ch != ' ') {
         newSent += ch;
         prevSpace = false;
-    } else if (!prevSpace) {
+    } 
+    else if (!prevSpace) {
         newSent += ' ';
         prevSpace = true;
     }

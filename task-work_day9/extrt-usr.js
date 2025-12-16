@@ -7,4 +7,4 @@ for(let ch of email){
     }
     user = user + ch;
 }
-console.log(user);
+console.log(`User name is ${user}`);

@@ -3,18 +3,26 @@ let checked = "";
 
 for (let ch of word) {
 
-    // skip if character already processed
-    if (checked.includes(ch)) {
-        continue;
+    let alreadyProcessed = false;
+
+    for (let i = 0; i < checked.length; i++) {
+        if (ch == checked[i]) {
+            alreadyProcessed = true;
+            break;
+        }
     }
 
+    if (alreadyProcessed) {
+        continue; // skip this character completely
+    }
+    
     let count = 0;
     let first = -1;
     let last = -1;
 
     for (let i = 0; i < word.length; i++) {
-        if (word[i] === ch) {
-            if (first === -1) {
+        if (word[i] == ch) {
+            if (first == -1) {
                 first = i;   // first occurrence
             }
             last = i;        // last occurrence
