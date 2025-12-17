@@ -1,4 +1,5 @@
-let sent = "sea seashore";
+let str = "Sea seashore";
+sent = str.toLowerCase();
 let word = "sea";
 let count = 0;
 
