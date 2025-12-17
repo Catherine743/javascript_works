@@ -1,6 +1,9 @@
 let str = "hello Javascript ";
 text = str.toLowerCase();
+
 let word = "javascript";
+word = word.toLowerCase()
+
 text = text.trim();
 let lastWord = "";   // declare outside
 
