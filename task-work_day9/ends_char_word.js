@@ -1,5 +1,6 @@
-let text = "hello javascript ";
-let word = "t";
+let str = "hello Javascript ";
+text = str.toLowerCase();
+let word = "javascript";
 text = text.trim();
 let lastWord = "";   // declare outside
 
@@ -26,7 +27,8 @@ else {
     } 
 }
 
-// let text = "hello javascript";
+// let str = "hello Javascript";
+// text = str.toLowerCase();
 // word = "javascript"
 
 // text = text.trim();
