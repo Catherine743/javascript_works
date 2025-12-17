@@ -1,13 +1,11 @@
 let text = "hello javascript ";
+word = "javascript"
 
-// remove trailing spaces
 text = text.trim();
 
-// LAST CHARACTER
 let lastChar = text.at(-1);
 console.log("Last character ->", lastChar);
 
-// LAST WORD
 let lastWord = "";
 for (let i = text.length - 1; i >= 0; i--) {
     if (text[i] == " ") {
@@ -16,7 +14,6 @@ for (let i = text.length - 1; i >= 0; i--) {
     }
 }
 
-// if there is only one word
 if (lastWord == "") {
     lastWord = text;
 }
