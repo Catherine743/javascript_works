@@ -1,7 +1,9 @@
 let text = "JavaScript is Easy to Learn";
-let word = "javascript";
 text = text.toLowerCase();
+
+let word = "javascript";
 word = word.toLowerCase();
+
 words = "";
 
 let found = false;
