@@ -1,5 +1,5 @@
 let word = "javascript";
-let ch = 'j';   // given character
+let ch = 'a';   // given character
 
 let first = -1;
 let last = -1;
