@@ -1,5 +1,4 @@
 let arr = [1, 2, 2, 3, 1];
-
 let freq = [];
 let count = [];
 let freqArr = "";
