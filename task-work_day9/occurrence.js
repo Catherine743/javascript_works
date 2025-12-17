@@ -16,10 +16,11 @@ for (let i = 0; i < word.length; i++) {
 if (first !== -1) {
     console.log(
         ch,
-        "→ First occurrence:", first,
+        "→ First occurrence:", first,",",
         "Last occurrence:", last
     );
-} else {
+} 
+else {
     console.log("Character not found");
 }
 
