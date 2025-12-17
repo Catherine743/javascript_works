@@ -1,4 +1,4 @@
-word = "hello javascript";
+word = "hello   javascript";
 words = "";
 
 for(i = 0; i < word.length; i++){
@@ -6,7 +6,7 @@ for(i = 0; i < word.length; i++){
         ch = word[i].toUpperCase()
         words = words + ch;
     }
-    else if (word[i] == ' '){
+    else if (word[i] == ' ' && word[i+1] != ' '){
         words = words + word[i];
         ch = word[i + 1].toUpperCase();
         words = words + ch;
