@@ -35,8 +35,8 @@ console.log(foods);
 // popFun = foods.pop();
 // console.log(foods);
 
-unshiftFun = foods.unshift("tea");
-console.log(foods);
+// unshiftFun = foods.unshift("tea");
+// console.log(foods);
 
 shiftFun = foods.shift();
 console.log(foods);
