@@ -29,25 +29,25 @@ var foods = ["dosa", "chapathi", "fried rice","dosa", "coffee", "meals"]
 console.log(foods);
 
 
-// pushFun = foods.push("mandhi");
+// foods.push("mandhi");
 // console.log(foods);
 
-// popFun = foods.pop();
+// foods.pop();
 // console.log(foods);
 
-// unshiftFun = foods.unshift("tea");
+// foods.unshift("tea");
 // console.log(foods);
 
-shiftFun = foods.shift();
+foods.shift();
 console.log(foods);
 
-let pos = foods.indexOf("fried rice")
+pos = foods.indexOf("fried rice")
 console.log(pos);
 
-let isExist = foods.includes("fried rice")
+isExist = foods.includes("fried rice")
 console.log(isExist);
 
-var portion = foods.slice(0,3); // returns values from index 0 to 2 
+portion = foods.slice(0,3); // returns values from index 0 to 2 
 console.log(portion);
 
 
