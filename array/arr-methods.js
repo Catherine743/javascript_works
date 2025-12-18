@@ -25,7 +25,7 @@ find()
 sort()
 */
 
-var foods = ["dosa", "chapathi", "fried rice","dosa", "coffee", "meals" ]
+var foods = ["dosa", "chapathi", "fried rice","dosa", "coffee", "meals"]
 console.log(foods);
 
 
