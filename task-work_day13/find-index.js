@@ -3,7 +3,7 @@ num = 3;
 
 for(i = 0; i < arr.length; i++){
     if(num == arr[i]){
-        console.log(i);
+        console.log(`Index of num ${num} is ${i}`);
         
     }
 }
