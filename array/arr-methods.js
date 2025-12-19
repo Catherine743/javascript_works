@@ -50,8 +50,12 @@ console.log(foods);
 // portion = foods.slice(0,3); // returns values from index 0 to 2 
 // console.log(portion);
 
-foods.splice(1,2);
+// foods.splice(1,2); // remove
+// console.log(foods);
+
+foods.splice(1,1,"alfham") // add
 console.log(foods);
+
 
 
 
