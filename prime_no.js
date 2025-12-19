@@ -1,4 +1,4 @@
-var num = 29;
+var num = 100;
 pattern = "";
 
 for (var prime = 2; prime <= num; prime++) {

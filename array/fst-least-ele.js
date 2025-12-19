@@ -6,7 +6,7 @@ var right = left + 1;
 while(left < arr.length - 1){
     diff = arr[right] - arr[left];
     if (diff != 1){
-        console.log(`${arr[left+1]} is missing`);
+        console.log(`${arr[left]+1} is missing`);
         break;
         
     }
