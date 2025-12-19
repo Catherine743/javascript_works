@@ -7,5 +7,5 @@ for (let word of arr) {
     }
 }
 
-console.log(`Maximum length of the string is ${max}`);
+console.log(`Maximum length string is ${max}`);
 
