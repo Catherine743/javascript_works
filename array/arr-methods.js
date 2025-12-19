@@ -14,7 +14,7 @@ array methods
 
 // extracting a portion
 slice(startIndex,endIndex)
-splice() => add,remove
+splice(start index from which to delete,no of items to delete) => add,remove // modify the original array
 
 map()
 filter()
@@ -38,16 +38,20 @@ console.log(foods);
 // foods.unshift("tea");
 // console.log(foods);
 
-foods.shift();
+// foods.shift();
+// console.log(foods);
+
+// pos = foods.indexOf("fried rice")
+// console.log(pos);
+
+// isExist = foods.includes("fried rice")
+// console.log(isExist);
+
+// portion = foods.slice(0,3); // returns values from index 0 to 2 
+// console.log(portion);
+
+foods.splice(1,2);
 console.log(foods);
 
-pos = foods.indexOf("fried rice")
-console.log(pos);
-
-isExist = foods.includes("fried rice")
-console.log(isExist);
-
-portion = foods.slice(0,3); // returns values from index 0 to 2 
-console.log(portion);
 
 
