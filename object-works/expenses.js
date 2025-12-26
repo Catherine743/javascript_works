@@ -14,19 +14,19 @@ for(let exp in expenses){
 }
 console.log(`Total expense is ${total}`);
 
-// max = 0;
-// for(let exp in expenses){
-//     if(expenses[exp] > max){
-//         max = expenses[exp];
-//     }
-// }
+max = 0;
+for(let exp in expenses){
+    if(expenses[exp] > max){
+        max = expenses[exp];
+    }
+}
 
-// for(let exp in expenses){
-//     if(max == expenses[exp]){
-//         console.log(exp,max);
+for(let exp in expenses){
+    if(max == expenses[exp]){
+        console.log(exp,max);
         
-//     }
-// }
+    }
+}
 
 split = total / Object.entries(expenses).length;
 console.log(`Individual split is ${split}`);
