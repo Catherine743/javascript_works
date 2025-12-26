@@ -23,4 +23,4 @@ for(let value of Object.values(expenses)){
 
 // Object.entries(object) => array [[jazeel,780],[nazim,680]]
 
-console.log(Object.entries(expenses));
+console.log(Object.entries(expenses)); // object -> nested array
