@@ -149,24 +149,24 @@ console.log(`Total price is ${total}`);
 // average price
 
 avg = Math.round(total / movies.length);
-console.log(avg);
+console.log(`Average price is ${avg}`);
 
 // movie with the highest price
 
 priceMax = movies.reduce((m1,m2) => m1.price > m2.price? m1 : m2).price;
 movMax = movies.filter(m => m.price == priceMax).map(m => [m.title,m.price]);
-console.log(movMax);
+console.log(`Movie with the highest price is ${movMax}`);
 
 // movie with the lowest price
 
 priceMin = movies.reduce((m1,m2) => m1.price < m2.price? m1 : m2).price;
 movMin = movies.filter(m => m.price == priceMin).map(m => [m.title,m.price]);
-console.log(movMin);
+console.log(`Movie with the highest price is ${movMin}`);
 
 // all movies directed by Christopher Nolan
 
 movChrist = movies.filter(m => m.director == "Christopher Nolan").map(m => m.title);
-console.log(movChrist);
+console.log("Movies directed by Christopher Nolan is" ,movChrist);
 
 // count of malayalam and english movies
 
