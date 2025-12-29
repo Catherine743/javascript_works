@@ -93,13 +93,13 @@ console.log(malaBook);
                                                      // object
 maxBook = books.sort((b1,b2) => b2.price - b1.price)[0].price
 costlyBook = books.filter(b => b.price == maxBook).map(b => [b.title,b.price])
-console.log(costlyBook);
+console.log("Costly book is", costlyBook);
 
 // cheap book
 
 minBook = books.reduce((b1,b2) => b1.price < b2.price? b1 : b2).price;
 cheapBook = books.filter(b => b.price == minBook).map(b => [b.title,b.price])
-console.log(cheapBook);
+console.log("Cheap book is", cheapBook);
 
 // display books greater than 500
 
@@ -109,22 +109,22 @@ console.log(booksGt500);
 // display the names of english authors
 
 englishAuthors = books.filter(b => b.language == "English").map(b => b.author)
-console.log(englishAuthors);
+console.log("English authors are", englishAuthors);
 
 // Retrieve the name of the books by Benyamin
 
 bookAuthor = books.filter(b => b.author == "Benyamin").map(b => [b.title,b.genre])
-console.log(bookAuthor);
+console.log("Name of the books by Benyamin is",bookAuthor);
 
-//Retrieve the genre of book "Khasakkinte Ithihasam"
+// Retrieve the genre of book "Khasakkinte Ithihasam"
 
 bookGenre = books.filter(b => b.title == "Khasakkinte Ithihasam").map(b => b.genre)
-console.log(bookGenre);
+console.log("Genre of the book of Khasakkinte Ithihasam is", bookGenre);
 
 // Retrieve the name of the book whose genre is Mystery/Thriller
 
 bookMyThrill = books.filter(b => b.genre == "Mystery/Thriller").map(b => b.title)
-console.log(bookMyThrill);
+console.log("Mystery/Thriller movie is", bookMyThrill);
 
 // Retrieve the number of books in the given object
 
