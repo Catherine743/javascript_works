@@ -42,3 +42,4 @@ console.log(minSalaryEmp);
 
 // method chain -> used when return array
 // map method can be used when input is array because filter method is used for the input of map
+// map method can be used in sort()
