@@ -29,47 +29,48 @@ var courses = [
 // 1. Create a new array containing only course titles.
 
 courTit = courses.map(c => c.title);
-// console.log(courTit);
+console.log(courTit);
 
 // 2. Find all courses taught by "Alex Brown".
 
 courAlex = courses.filter(c => c.instructor == "Alex Brown").map(c => c.title);
-// console.log(courAlex);
+console.log(courAlex);
 
 // 3. Find all courses whose duration is more than 25 hrs.
 
 courDur = courses.filter(c => c.duration > "25 hrs").map(c => c.title);
-// console.log(courDur);
+console.log(courDur);
 
 // 4. Create a new array with title and duration only.
 
 titDur = courses.map(c => [c.title,c.duration]);
-// console.log(titDur);
+console.log(titDur);
 
 // 5. Find all courses where the level is "Beginner".
 
 couBegin = courses.filter(c => c.level == "Beginner").map(c => c.title);
-// console.log(couBegin);
+console.log(couBegin);
 
 // 6. Sort the courses by duration (ascending order).
 
-// sortDur = courses.sort((c1,c2) => c1.duration.localeCompare(c2.duration)).map(c => [c.title,c.duration]);
-// console.log(sortDur);
+sortDur = courses.sort((c1,c2) => c1.duration.localeCompare(c2.duration)).map(c => [c.title,c.duration]);
+console.log(sortDur);
 
 // 7. Sort the courses by level (Beginner → Intermediate → Advanced).
+
 lvlOrder = {Beginner : 1, Intermediate : 2, Advanced : 3}
-// courLvl = courses.sort((c1,c2) => lvlOrder[c1.level] - lvlOrder[c2.level]).map(c => [c.title,c.level]);
-// console.log(courLvl);
+courLvl = courses.sort((c1,c2) => lvlOrder[c1.level] - lvlOrder[c2.level]).map(c => [c.title,c.level]);
+console.log(courLvl);
 
 // 8. Find all courses in the "Backend" category.
 
 courBack = courses.filter(c => c.category == "Backend").map(c => c.title);
-// console.log(courBack);
+console.log(courBack);
 
 // 9. Find the average price of all courses.
 
 avgPrice = courses.reduce((sum,c) => sum + c.price,0) / courses.length;
-// console.log(avgPrice);
+console.log(avgPrice);
 
 // 10. Count how many courses belong to each level.
 
@@ -85,17 +86,17 @@ for(let c of courses){
     }
 }
 
-// console.log(levelCount);
+console.log(levelCount);
 
 // 11. Find the most expensive course price.
 
 maxPrice = courses.reduce((c1,c2) => c1.price > c2.price? c1 : c2).price;
-// console.log(maxPrice);
+console.log(maxPrice);
 
 // 12. Create a new array with title and price of each course.
 
 titPrice = courses.map(c => [c.title,c.price]);
-// console.log(titPrice);
+console.log(titPrice);
 
 // 13. Find the total number of courses in each category.
 
@@ -111,37 +112,37 @@ for(let c of courses){
     }
 }
 
-// console.log(courCount);
+console.log(courCount);
 
 // 14. Sort the courses by price (low to high).
 
 sortPrice = courses.sort((c1,c2) => c1.price - c2.price).map(c => [c.title,c.price])
-// console.log(sortPrice);
+console.log(sortPrice);
 
 // 15. Find the total price of all courses.
 
 totPrice = courses.reduce((sum,c) => sum + c.price, 0);
-// console.log(totPrice);
+console.log(`Total price is ${totPrice}`);
 
 // 16. Sort the courses by price (high to low).
 
 sortPrice = courses.sort((c1,c2) => c2.price - c1.price).map(c => [c.title,c.price])
-// console.log(sortPrice);
+console.log(sortPrice);
 
 // 17. Create a new array showing title and instructor name.
 
 titInstruct = courses.map(c => [c.title,c.instructor]);
-// console.log(titInstruct);
+console.log(titInstruct);
 
 // 18. Find all courses with price greater than 2500.
 
 courGt2500 = courses.filter(c => c.price > 2500).map(c => [c.title,c.price]);
-// console.log(courGt2500);
+console.log(courGt2500);
 
 // 19. Create a new array of course titles in uppercase.
 
 courUpper = courses.map(c => c.title.toUpperCase());
-// console.log(courUpper);
+console.log(courUpper);
 
 // 20. Sort the courses by title (alphabetical order).
 
