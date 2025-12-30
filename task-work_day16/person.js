@@ -136,7 +136,7 @@ console.log(Object.isSealed(mergedSprd));
 
 // 27. Create a method inside an object and call it
 
-user = {
+let user = {
     name: "Anju",
     greet: function () {
     console.log("Hello");
