@@ -72,7 +72,7 @@ for(let e of expenses){
     }
 }
 
-// console.log(mostPayMet);
+console.log(mostPayMet);
 
 // amount of food by sara
 
@@ -116,10 +116,59 @@ for(let e of expenses){
     }
 }
 
-console.log(catgrySum);
+// console.log(catgrySum);
 
 sortCategory = Object.entries(catgrySum).sort((e1,e2) => e2[1] - e1[1]);
-console.log(sortCategory);
+// console.log(sortCategory);
+
+// priority summary wrt owner
+
+ownerName = {};
+for(let e of expenses){
+    owner = e.owner;
+    priority = e.priority;
+    // need = e.priority == "need"? "need" : null;
+    // want = e.priority == "want"? "want" : null;
+    if(!(owner in ownerName)){
+        ownerName[owner] = {need : 0, want : 0};
+    }
+    ownerName[owner][e.priority]++; 
+    
+}
+console.log(ownerName);
+
+// payment methods
+
+payMethod = [];
+
+for (let e of expenses) {
+    if (!payMethod.includes(e.payment_method)) {
+        payMethod.push(e.payment_method);
+    }
+}
+
+console.log(payMethod);
+
+// let payMethod = {};
+
+// for (let e of expenses) {
+//     let payType = e.payment_method;
+
+//     if (!(payType in payMethod)) {
+//         payMethod[payType] = true; // just a marker
+//     }
+// }
+
+// console.log(Object.keys(payMethod));
+
+
+
+
+
+
+
+
+
 
 
 
