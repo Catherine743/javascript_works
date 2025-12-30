@@ -1,16 +1,18 @@
+// 1. create an object person  with properties name, age and city
+
 person = {
     name : "Anu",
     age : 25,
     city : "Thrissur"
 }
 
-// // 2. Access the age property
+// 2. Access the age property
 
-// console.log("Age :",person.age);
+console.log("Age :",person.age);
 
-// // 3. Access the city property
+// 3. Access the city property
 
-// console.log("City :",person["city"]);
+console.log("City :",person["city"]);
 
 // // 4. Add property email
 
