@@ -21,7 +21,7 @@ var expenses = [
   { id: 20, title: "New Shirt", amount: 900, category: "shopping", owner: "amit", payment_method: "card", priority: "want" }
 ];
 
-// Owner summary
+// 1. Owner summary
 
 ownerSum = {};
 
@@ -36,29 +36,29 @@ for(let e of expenses){
     }
 }
 
-// console.log(ownerSum);
+console.log(ownerSum);
 
-// Transaction with the highest amount
+// 2. Transaction with the highest amount
 
 expMax = expenses.reduce((e1,e2) => e1.amount > e2.amount? e1 : e2);
-// console.log(expMax);
+console.log(expMax);
 
-// Cash transactions
+// 3. Cash transactions
 
 cashTrans = expenses.filter(e => e.payment_method == "cash").map(e => [e.title,e.amount]);
-// console.log(cashTrans);
+console.log(cashTrans);
 
-// Transactions with more  than 1000
+// 4. Transactions with more  than 1000
 
 transGt1000 = expenses.filter(e => e.amount > 1000).map(e => [e.title,e.amount]);
-// console.log(transGt1000);
+console.log(transGt1000);
 
-// Total expense
+// 5. Total expense
 
 total = expenses.reduce((sum,e) => sum + e.amount, 0);
-// console.log(total);
+console.log(total);
 
-// Most used payment method
+// 6. Most used payment method
 
 mostPayMet = {};
 
@@ -74,12 +74,12 @@ for(let e of expenses){
 
 console.log(mostPayMet);
 
-// amount of food by sara
+// 7. amount of food by sara
 
 amountFoodSara = expenses.filter(e => e.category == "food" && e.owner == "sarah").reduce((s,e) => s + e.amount, 0);
-// console.log(amountFoodSara);
+console.log(amountFoodSara);
 
-// priority summary (amount spend in each priority)
+// 8. priority summary (amount spend in each priority)
 
 priorSum = {};
 
@@ -94,14 +94,14 @@ for(let e of expenses){
     }
 }
 
-// console.log(priorSum);
+console.log(priorSum);
 
-// Transactions of Jazeel
+// 9. Transactions of Jazeel
 
 transJazeel = expenses.filter(e => e.owner == "jazeel");
-// console.log(transJazeel);
+console.log(transJazeel);
 
-// Highest paid category
+// 10. Highest paid category
 
 catgrySum = {};
 
@@ -116,12 +116,12 @@ for(let e of expenses){
     }
 }
 
-// console.log(catgrySum);
+console.log(catgrySum);
 
 sortCategory = Object.entries(catgrySum).sort((e1,e2) => e2[1] - e1[1]);
-// console.log(sortCategory);
+console.log(sortCategory);
 
-// priority summary wrt owner
+// 11. priority summary wrt owner
 
 ownerName = {};
 for(let e of expenses){
@@ -137,7 +137,7 @@ for(let e of expenses){
 }
 console.log(ownerName);
 
-// payment methods
+// 12. payment methods
 
 payMethod = [];
 
