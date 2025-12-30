@@ -131,6 +131,40 @@ console.log("Mystery/Thriller movie is", bookMyThrill);
 numBooks = books.length;
 console.log(`Number of books is ${numBooks}`);
 
+// language summary
+countLang = {};
+for(let b of books){
+  lang = b.language;
+  if(lang in countLang){
+    countLang[lang] += 1
+  }
+  else{
+    countLang[lang] = 1;
+  }
+}
+
+console.log(countLang);
+
+// sort the books by alphabetical order
+
+books.sort((b1,b2) => b1.title.localeCompare(b2.title))
+console.log(books);
+
+// language with most number of books
+
+// here, countLang is an object -> convert into array (Object.entries), then apply array methods 
+maxLang = Object.entries(countLang).reduce((l1,l2) => l1[1] > l2[1]? l1 : l2);
+console.log(maxLang);
+
+// language with minimum number of books
+
+minLang = Object.entries(countLang).reduce((l1,l2) => l1[1] < l2[1]? l1 : l2);
+console.log(minLang);
+
+// json - data transfer format
+
+// array of object - javascript
+// list of dictionary - python 
 
 
 
