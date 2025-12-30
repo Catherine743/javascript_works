@@ -14,61 +14,61 @@ console.log("Age :",person.age);
 
 console.log("City :",person["city"]);
 
-// // 4. Add property email
+// 4. Add property email
 
-// person.email = "anu123@gmail.com";
-// console.log(person);
+person.email = "anu123@gmail.com";
+console.log(person);
 
-// // 5. Update the value of a property
+// 5. Update the value of a property
 
-// person.city = "Ernakulam";
-// console.log(person);
+person.city = "Ernakulam";
+console.log(person);
 
-// // 6. delete age property
+// 6. delete age property
 
-// delete person.age;
-// console.log(person);
+delete person.age;
+console.log(person);
 
-// // 7. check phone exists
+// 7. check phone exists
 
-// console.log("phone" in person? "Phone exists" : "Phone does not exists");
+console.log("phone" in person? "Phone exists" : "Phone does not exists");
 
-// // 8. Iterate all properties using for..in 
+// 8. Iterate all properties using for..in 
 
-// for(let data in person){
-//     console.log(data,":",person[data]);
+for(let data in person){
+console.log(data,":",person[data]);
     
-// }
+}
 
-// // 9. Count the number of properties
+// 9. Count the number of properties
 
-// console.log("Number of properties :",Object.keys(person).length);
+console.log("Number of properties :",Object.keys(person).length);
 
-// // 10. Convert object into array of keys
+// 10. Convert object into array of keys
 
-// console.log(Object.keys(person));
+console.log(Object.keys(person));
 
-// // 11. Convert object into array of values
+// 11. Convert object into array of values
 
-// console.log(Object.values(person));
+console.log(Object.values(person));
 
-// // 12. Convert object into key-value pairs
+// 12. Convert object into key-value pairs
 
-// console.log(Object.entries(person));
+console.log(Object.entries(person));
 
-// // 13. Create an empty object and add properties 
+// 13. Create an empty object and add properties 
 
-// job = {};
+job = {};
 
-// job.id = 30;
-// job.designation = "Web developer";
-// job.location = "Trivandrum"
+job.id = 30;
+job.designation = "Web developer";
+job.location = "Trivandrum"
 
-// console.log(job);
+console.log(job);
 
-// // 14. compare 2 objects for equality
+// 14. compare 2 objects for equality
 
-// console.log(person == job);
+console.log(person == job);
 
 // 15. Nest one object inside another object
 
@@ -79,36 +79,36 @@ employee = {
     pincode: 673001
   }
 };
-// console.log(employee);
+console.log(employee);
 
-// // 16. display all keys using Object.keys()
+// 16. display all keys using Object.keys()
 
-// console.log(Object.keys(employee));
+console.log(Object.keys(employee));
 
-// // 17. display all values using Object.values()
+// 17. display all values using Object.values()
 
-// console.log(Object.values(employee));
+console.log(Object.values(employee));
 
-// // 18. loop through keys and values
+// 18. loop through keys and values
 
-// for (let [key, value] of Object.entries(employee)) {
-//   console.log(key,":", value);
-// }
+for (let [key, value] of Object.entries(employee)) {
+  console.log(key,":", value);
+}
 
-// // 19. Copy one object into another using Object.assign()
+// 19. Copy one object into another using Object.assign()
 
-// employeeCopy = Object.assign({},employee)
-// console.log(employeeCopy);
+employeeCopy = Object.assign({},employee)
+console.log(employeeCopy);
 
-// // 20. Merge 2 objects using Object.assign()
+// 20. Merge 2 objects using Object.assign()
 
 mergeObj = Object.assign({},person,employee)
-// console.log(mergeObj);
+console.log(mergeObj);
 
-// // 21. Merge 2 objects using the spread operator {...}
+// 21. Merge 2 objects using the spread operator {...}
 
 mergedSprd = { ...person, ...employee };
-// console.log(mergedSprd);
+console.log(mergedSprd);
 
 // 22. Freeze an object using Object.freeze()
 
@@ -137,10 +137,10 @@ console.log(Object.isSealed(mergedSprd));
 // 27. Create a method inside an object and call it
 
 user = {
-  name: "Anju",
-  greet: function () {
+    name: "Anju",
+    greet: function () {
     console.log("Hello");
-  }
+    }
 };
 
 user.greet();
