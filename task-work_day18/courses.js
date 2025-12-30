@@ -131,13 +131,21 @@ sortPrice = courses.sort((c1,c2) => c2.price - c1.price).map(c => [c.title,c.pri
 // 17. Create a new array showing title and instructor name.
 
 titInstruct = courses.map(c => [c.title,c.instructor]);
-console.log(titInstruct);
+// console.log(titInstruct);
 
 // 18. Find all courses with price greater than 2500.
 
-courGt2500 = courses.filter(c => c.price > 2500)
+courGt2500 = courses.filter(c => c.price > 2500).map(c => [c.title,c.price]);
+// console.log(courGt2500);
+
 // 19. Create a new array of course titles in uppercase.
+
+courUpper = courses.map(c => c.title.toUpperCase());
+// console.log(courUpper);
+
 // 20. Sort the courses by title (alphabetical order).
 
+sortTit = courses.sort((c1,c2) => c1.title.localeCompare(c2.title)).map(c => c.title);
+console.log(sortTit);
 
 // function localeCompare applied only in strings
