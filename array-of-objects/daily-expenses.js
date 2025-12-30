@@ -149,10 +149,10 @@ for (let e of expenses) {
 
 console.log(payMethod);
 
-// let payMethod = {};
+// payMethod = {};
 
 // for (let e of expenses) {
-//     let payType = e.payment_method;
+//     payType = e.payment_method;
 
 //     if (!(payType in payMethod)) {
 //         payMethod[payType] = true; // just a marker
