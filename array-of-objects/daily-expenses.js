@@ -136,6 +136,30 @@ for(let e of expenses){
 }
 console.log(ownerName);
 
+// 11.1 sum of amounts in each priority summary wrt owner
+
+ownerSum = {};
+
+for(let e of expenses){
+    prior = e.priority;
+    ownName = e.owner;
+    amou = e.amount;
+    if(ownName in ownerSum){
+        ownerSum[ownName][prior] += amou;
+    }
+    else{
+        if(prior == "need"){
+            ownerSum[ownName] = {need : amou, want : 0} // {"need" : amou, "want" : 0}
+        }
+        else{
+            ownerSum[ownName] = {need : 0, want : amou} 
+        }
+    }
+}
+
+console.log(ownerSum);
+
+
 // 12. payment methods
 
 payMethod = [];
