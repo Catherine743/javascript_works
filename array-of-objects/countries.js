@@ -46,44 +46,44 @@ var countries = [
 // some
 
 isExist = countries.some(c => c.population < 275000001);
-// console.log(isExist);
+console.log(isExist);
 
 // is there any country with more than 2 language
 
 lang2More = countries.some(c => c.language.length > 2);
-// console.log(lang2More);
+console.log(lang2More);
 
 // is there any country with more than 3 borders
 
 cou3Bor = countries.some(c => c.borders.length > 3);
-// console.log(cou3Bor);
+console.log(cou3Bor);
 
 // find
 
 indiaDet = countries.find(c => c.name == "India");
-// console.log(indiaDet);
+console.log(indiaDet);
 
 detIQ = countries.find(c => c.alpha2cod == "IQ");
-// console.log(detIQ);
+console.log(detIQ);
 
 detCN = countries.find(c => c.alpha2cod.toLowerCase() == "cn");
-// console.log(detCN);
+console.log(detCN);
 
 // forEach
-// countries.forEach(c => console.log(c.name));
+countries.forEach(c => console.log(c.name));
 
 // names of countries with more than 2 borders
 
-// countries.filter(c => c.borders.length > 2).forEach(c => console.log(c.name));
+countries.filter(c => c.borders.length > 2).forEach(c => console.log(c.name));
 
 // names of countries with currency as eur
 
-// countries.filter(c => c.currency == "EUR").forEach(c => console.log(c.name));
+countries.filter(c => c.currency == "EUR").forEach(c => console.log(c.name));
 
 // 1. Total population
 
 totalPop = countries.reduce((sum,c) => sum + c.population, 0);
-// console.log(totalPop);
+console.log(totalPop);
 
 // 2. Filter and list countries that have the same currency
 
@@ -101,7 +101,7 @@ for(let c of countries){
         // or curWise[curr] = [couName];
     }
 }
-// console.log(curWise);
+console.log(curWise);
 
 // 2.1 count of countries based on currency
 
@@ -122,8 +122,8 @@ for(let c of countries){
 
 // 3. sort countries in alphabetical order
 
-// sortCou = countries.sort((c1,c2) => c1.name.localeCompare(c2.name)).map(c => c.name);
-// console.log(sortCou);
+sortCou = countries.sort((c1,c2) => c1.name.localeCompare(c2.name)).map(c => c.name);
+console.log(sortCou);
 
 // 4. Count how many countries use each language
 
@@ -155,13 +155,13 @@ for(let c of countries){
        }
    }
 }
-// console.log(lanWise);
+console.log(lanWise);
 
 // 5. highest population country
 
 highPop = countries.reduce((c1,c2) => c1.population > c2.population? c1 : c2).population;
 maxPop = countries.filter(c => c.population == highPop).map(c => c.name);
-// console.log(maxPop);
+console.log(maxPop);
 
 // 6. Categorize the countries based on language 
 
@@ -182,22 +182,22 @@ for(let c of countries){
     }
 }
 
-// console.log(couLang);
+console.log(couLang);
 
 // 7. list countries more than one language
 
 couGt1Lang = countries.filter(c => c.language.length > 1).map(c => c.name);
-// console.log(couGt1Lang);
+console.log(couGt1Lang);
 
 // 8. average population of all countries
 
 avgPop = Math.round(countries.reduce((sum,c) => sum + c.population, 0) / countries.length);
-// console.log(avgPop);
+console.log(avgPop);
 
 // 9. List all countries that use "EUR" as their currency.
 
 couEUR = countries.filter(c => c.currency == "EUR").map(c => c.name);
-// console.log(couEUR);
+console.log(couEUR);
 
 // 10. Country with the highest number of border-sharing countries
 
