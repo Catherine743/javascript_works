@@ -78,14 +78,14 @@ detCN = countries.find(c => c.alpha2cod.toLowerCase() == "cn");
 
 // names of countries with currency as eur
 
-countries.filter(c => c.currency == "EUR").forEach(c => console.log(c.name));
+// countries.filter(c => c.currency == "EUR").forEach(c => console.log(c.name));
 
 // 1. Total population
 
 totalPop = countries.reduce((sum,c) => sum + c.population, 0);
 // console.log(totalPop);
 
-// Filter and list countries that have the same currency
+// 2. Filter and list countries that have the same currency
 
 curWise = {};
 
@@ -103,7 +103,7 @@ for(let c of countries){
 }
 // console.log(curWise);
 
-// count of countries based on currency
+// 2.1 count of countries based on currency
 
 // curSum = {};
 
@@ -120,22 +120,106 @@ for(let c of countries){
 
 // or console.log(Object.entries(curSum).sort((c1,c2) => c2[1] - c1[1]));
 
-// sort countries in alphabetical order
+// 3. sort countries in alphabetical order
 
-sortCou = countries.sort((c1,c2) => c1.name.localeCompare(c2.name)).map(c => c.name);
+// sortCou = countries.sort((c1,c2) => c1.name.localeCompare(c2.name)).map(c => c.name);
 // console.log(sortCou);
 
-// language count
+// 4. Count how many countries use each language
 
-lanCount = countries
-// highest population country
-// Categorize the countries based on language 
-// list countries more than one language
-// average population of all countries
-// display all languages
-// countries which can touch the higher number of borders
-// countries which does not touch the borders
-// list countries that have euro currency
+// lanWise = {};
+
+// for(let c of countries){
+//     lang = c.language;
+//     if(lang in lanWise){
+//         lanWise[lang] += 1;
+//     }
+//     else{
+//         lanWise[lang] = 1;
+//     }
+// }
+
+// console.log(lanWise);
+
+// or (exact answer)
+
+lanWise = {};
+for(let c of countries){
+   lang = c.language; // array of languages
+   for(let l of lang){
+       if(l in lanWise){
+           lanWise[l] +=1;
+       }
+       else{
+           lanWise[l] =1;
+       }
+   }
+}
+// console.log(lanWise);
+
+// 5. highest population country
+
+highPop = countries.reduce((c1,c2) => c1.population > c2.population? c1 : c2).population;
+maxPop = countries.filter(c => c.population == highPop).map(c => c.name);
+// console.log(maxPop);
+
+// 6. Categorize the countries based on language 
+
+couLang = {};
+
+for(let c of countries){
+    lang = c.language;
+    couName = c.name;
+    for(l of lang){
+        if(l in couLang){
+            couLang[l].push(couName);
+            // or couLang[l] += ", " + couName
+        }
+        else{
+            couLang[l] = [couName]
+            // or couLang[l] = couName
+        }
+    }
+}
+
+// console.log(couLang);
+
+// 7. list countries more than one language
+
+couGt1Lang = countries.filter(c => c.language.length > 1).map(c => c.name);
+// console.log(couGt1Lang);
+
+// 8. average population of all countries
+
+avgPop = Math.round(countries.reduce((sum,c) => sum + c.population, 0) / countries.length);
+// console.log(avgPop);
+
+// 9. List all countries that use "EUR" as their currency.
+
+couEUR = countries.filter(c => c.currency == "EUR").map(c => c.name);
+// console.log(couEUR);
+
+// 10. Country with the highest number of border-sharing countries
+
+couMaxBor = countries.reduce((c1,c2) => c1.borders.length > c2.borders.length? c1 : c2).borders.length; //.borders(only)
+highNumBor = countries.filter(c => c.borders.length == couMaxBor).map(c => c.name);
+console.log(highNumBor);
+
+// 11. Country with the lowest population
+
+couLowPop = countries.reduce((c1,c2) => c1.population < c2.population? c1 : c2).population;
+lowPop = countries.filter(c => c.population == couLowPop).map(c => c.name);
+console.log(lowPop);
+
+// 12. List all countries that have no border-sharing countries.
+
+couNoBor = countries.filter(c => c.borders.length == 0).map(c => c.name);
+console.log(couNoBor);
+
+// 13. Sort the countries by population in ascending order.
+
+sortPop = countries.sort((c1,c2) => c1.population - c2.population).map(c => c.name);
+console.log(sortPop);
 
 // <!--------!>
 // some - almost same as includes()[works only in strings] but used in complex array like array of objects
@@ -150,3 +234,28 @@ lanCount = countries
 // forEach does not return nothing as array, do not want to assign it to a variable 
 // same purpose as map method
 // forEach method can be applied on arrays
+
+// * display all languages
+
+// allLang = [];
+
+// for(let c of countries){
+//     lang = c.language;
+//     for(l of lang){
+//         if(!(allLang.includes(l))){
+//         allLang.push(l)
+//         }
+//     }
+// }
+// console.log(allLang);
+
+// or 
+// allLang = {};
+
+// for (let c of countries) {
+//   for (let l of c.language) {
+//     allLang[l] = true;   // key = language
+//   }
+// }
+
+// console.log(Object.keys(allLang));
