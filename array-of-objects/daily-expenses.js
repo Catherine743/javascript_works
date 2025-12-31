@@ -159,7 +159,6 @@ for(let e of expenses){
 
 console.log(ownerSum);
 
-
 // 12. payment methods
 
 payMethod = [];
