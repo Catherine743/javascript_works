@@ -126,7 +126,6 @@ console.log(sortCategory);
 ownerName = {};
 for(let e of expenses){
     owner = e.owner;
-    priority = e.priority;
     // need = e.priority == "need"? "need" : null;
     // want = e.priority == "want"? "want" : null;
     if(!(owner in ownerName)){
