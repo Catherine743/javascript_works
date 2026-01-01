@@ -121,22 +121,7 @@ console.log(catgrySum);
 sortCategory = Object.entries(catgrySum).sort((e1,e2) => e2[1] - e1[1]);
 console.log(sortCategory);
 
-// 11. priority summary wrt owner
-
-ownerName = {};
-for(let e of expenses){
-    owner = e.owner;
-    // need = e.priority == "need"? "need" : null;
-    // want = e.priority == "want"? "want" : null;
-    if(!(owner in ownerName)){
-        ownerName[owner] = {need : 0, want : 0};
-    }
-    ownerName[owner][e.priority]++; 
-    
-}
-console.log(ownerName);
-
-// 11.1 sum of amounts in each priority summary wrt owner
+// 11. sum of amounts in each priority summary wrt owner
 
 ownerSum = {};
 
@@ -158,6 +143,22 @@ for(let e of expenses){
 }
 
 console.log(ownerSum);
+
+// 11.1 priority summary wrt owner
+
+ownerName = {};
+
+for(let e of expenses){
+    owner = e.owner;
+    // need = e.priority == "need"? "need" : null;
+    // want = e.priority == "want"? "want" : null;
+    if(!(owner in ownerName)){
+        ownerName[owner] = {need : 0, want : 0};
+    }
+    ownerName[owner][e.priority]++; 
+    
+}
+console.log(ownerName);
 
 // 12. payment methods
 
