@@ -114,7 +114,7 @@ console.log(jobInfosys);
 
 // 10. Find all jobs where the skills array length is greater than 3.
 
-jobSkillGt3 = jobs.some(j => j.skills.length > 3)
+jobSkillGt3 = jobs.filter(j => j.skills.length > 3)
 console.log(jobSkillGt3);
 
 // 11. List all Manager-level jobs.
