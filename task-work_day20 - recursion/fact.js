@@ -5,4 +5,4 @@ function fact(n){
     return  n * fact(n - 1);
 }
 
-console.log(fact(5));
+console.log(`Factorial of ${5}! is ${fact(5)}`);

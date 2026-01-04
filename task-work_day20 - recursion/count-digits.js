@@ -7,4 +7,4 @@ function countDig(n){
     return countDig(Math.floor(n / 10));
 }
 
-console.log(countDig(234));
+console.log("No of digits is",countDig(234));

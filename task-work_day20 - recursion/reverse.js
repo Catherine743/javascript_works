@@ -8,4 +8,4 @@ function reverse(str){
     return rev;
 }
 
-console.log(reverse(str));
+console.log(`Reverse of ${str} is ${reverse(str)}`);

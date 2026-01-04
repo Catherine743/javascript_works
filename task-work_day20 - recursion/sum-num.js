@@ -7,4 +7,4 @@ function sumNum(n){
     return sumNum(n - 1);
 }
 
-console.log(sumNum(10));
+console.log(`Sum of numbers is ${sumNum(10)}`);

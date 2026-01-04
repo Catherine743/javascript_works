@@ -6,7 +6,7 @@ function sumEle(arr){
     }
     return sum
 }
-console.log(sumEle(arr));
+console.log(`Sum of elements is ${sumEle(arr)}`);
 
 
 
