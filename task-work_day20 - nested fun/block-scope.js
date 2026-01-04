@@ -4,8 +4,8 @@ function outerFunction() {
     function innerFunction() {
         let innerVar = "Inner function";
 
-        console.log(outerVar); // Accessible
-        console.log(innerVar); // Accessible
+        console.log(outerVar); 
+        console.log(innerVar); 
     }
 
     innerFunction();
