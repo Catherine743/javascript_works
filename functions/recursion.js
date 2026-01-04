@@ -51,7 +51,7 @@ function sumDig(n){
 // sum = 0;
 function sumNum(n){
     if(n == 0){
-        return sum
+        return sum; // or return 0;
     }
     // sum = sum + n;
     return sumNum(n - 1) // or return n + sumNum(n - 1)
