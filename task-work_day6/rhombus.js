@@ -1,17 +1,17 @@
-let rows = 6;     
-let stars = 4;     
+rows = 6;     
+stars = 4;     
 
-for (let r = 1; r <= rows; r++) {
+for (r = 1; r <= rows; r++) {
 
-    let pattern = "";
+    pattern = "";
 
    
-    for (let s = 1; s < r; s++) {
+    for (s = 1; s < r; s++) {
         pattern += "\t";
     }
 
    
-    for (let st = 1; st <= stars; st++) {
+    for (st = 1; st <= stars; st++) {
         pattern += "*\t";
     }
 
