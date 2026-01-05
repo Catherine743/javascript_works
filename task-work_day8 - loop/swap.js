@@ -6,7 +6,7 @@ middle = "";
 while(num != 0){
     dig = num % 10;
     if (temp == 0){
-        result = result +dig;
+        result = result + dig;
         temp = 1;
     }
     else if(num < 10){
