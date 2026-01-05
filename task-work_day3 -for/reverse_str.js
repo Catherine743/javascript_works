@@ -1,17 +1,20 @@
 str = "HELLO";
 count = str.length;
-reverse = [];
-j = 0;
+reverse = "";
+// reverse = []; 
+// j = 0;
 
 
 for(i = count-1; i >= 0; i--){
-    reverse[j] = str[i];
-    j++;
+    
+    // reverse[j] = str[i]; 
+    reverse += str[i]
+    // j++;
 }
 
 
-string = reverse.join("");
-console.log(`Reverse of ${str} is ${string}`);
+// string = reverse.join("");
+console.log(`Reverse of ${str} is ${reverse}`);
 
 // string = str.split("").reverse().join("")
 
