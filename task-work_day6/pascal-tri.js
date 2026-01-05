@@ -1,17 +1,17 @@
 
-let rows = 5;
+rows = 5;
 
-for (let r = 0; r < rows; r++) {
-    let pattern = "";
+for (r = 0; r < rows; r++) {
+    pattern = "";
 
 
-    for (let s = 0; s < rows - r; s++) {
+    for (s = 0; s < rows - r; s++) {
         pattern += "\t";
     }
 
     
-    let val = 1;
-    for (let c = 0; c <= r; c++) {
+    val = 1;
+    for (c = 0; c <= r; c++) {
         pattern += val + "\t\t";
 
         
