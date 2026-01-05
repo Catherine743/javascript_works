@@ -1,10 +1,10 @@
 function sumDigits(num){
-    let reverse = [];
-    let sum = 0;
-    let i = 0;
+    reverse = [];
+    sum = 0;
+    i = 0;
 
     while(num != 0){
-        let dig = num % 10;
+        dig = num % 10;
         sum = sum + dig;
         reverse[i] = dig;
         i++;
