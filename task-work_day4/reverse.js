@@ -6,7 +6,7 @@ for(let ch of text){
         
 }
 
-// for(let i = text.length; i >= 0; i--){
+// for(let i = text.length - 1; i >= 0; i--){
 //     rev = rev + text[i];
 // }
 
