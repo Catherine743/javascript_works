@@ -3,7 +3,7 @@ function largestWord(sent) {
     words = [];
     word = "";
     wIndex = 0;
-    
+
     for (i = 0; i < sent.length; i++) {
 
         if (sent[i] !== " ") {
@@ -12,7 +12,7 @@ function largestWord(sent) {
         else {
             words[wIndex] = word;
             wIndex++;
-            word = "";s
+            word = "";
         }
     }
 
