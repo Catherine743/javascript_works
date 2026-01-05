@@ -1,14 +1,14 @@
-let row = 5;
-let col = 9; 
-let center = Math.floor(col / 2);
+row = 5;
+col = 9; 
+center = Math.floor(col / 2);
 
-for (let r = 1; r <= row; r++) {
-    let pattern = "";
+for (r = 1; r <= row; r++) {
+    pattern = "";
 
-    let left = center - (r - 1);
-    let right = center + (r - 1);
+    left = center - (r - 1);
+    right = center + (r - 1);
 
-    for (let c = 0; c < col; c++) {
+    for (c = 0; c < col; c++) {
         if (c >= left && c <= right) {
             pattern += "*\t";
             left += 2;
@@ -20,13 +20,13 @@ for (let r = 1; r <= row; r++) {
     console.log(pattern);
 }
 
-for (let r = row - 1; r >= 1; r--) {
-    let pattern = "";
+for (r = row - 1; r >= 1; r--) {
+    pattern = "";
 
-    let left = center - (r - 1);
-    let right = center + (r - 1);
+    left = center - (r - 1);
+    right = center + (r - 1);
 
-    for (let c = 0; c < col; c++) {
+    for (c = 0; c < col; c++) {
         if (c >= left && c <= right) {
             pattern += "*\t";
             left += 2;
