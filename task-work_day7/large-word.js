@@ -1,11 +1,10 @@
 function largestWord(sent) {
 
-    let words = [];
-    let word = "";
-    let wIndex = 0;
-
-
-    for (let i = 0; i < sent.length; i++) {
+    words = [];
+    word = "";
+    wIndex = 0;
+    
+    for (i = 0; i < sent.length; i++) {
 
         if (sent[i] !== " ") {
             word = word + sent[i];
@@ -13,7 +12,7 @@ function largestWord(sent) {
         else {
             words[wIndex] = word;
             wIndex++;
-            word = "";
+            word = "";s
         }
     }
 
