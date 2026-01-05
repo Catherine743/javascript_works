@@ -33,4 +33,4 @@ var anuInstance = new Bank();
 
 anuInstance.createAccount(234,"Anu","Savings Account",50000);
 anuInstance.deposit(30000);
-anuInstance.withdraw(40000)
+anuInstance.withdraw(40000);
