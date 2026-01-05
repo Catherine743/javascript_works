@@ -9,7 +9,7 @@ function uniqueWord(word){
 
         // check if character already stored
         for (j = 0; j < unique.length; j++) {
-            if (word[i] === unique[j]) {
+            if (word[i] == unique[j]) {
                 found = true;
                 break;
             }
