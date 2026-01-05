@@ -1,14 +1,14 @@
 function uniqueWord(word){
 
-    let unique = [];
-    let index = 0;
+    unique = [];
+    index = 0;
 
-    for (let i = 0; i < word.length; i++) {
+    for (i = 0; i < word.length; i++) {
 
-        let found = false;
+        found = false;
 
         // check if character already stored
-        for (let j = 0; j < unique.length; j++) {
+        for (j = 0; j < unique.length; j++) {
             if (word[i] === unique[j]) {
                 found = true;
                 break;
