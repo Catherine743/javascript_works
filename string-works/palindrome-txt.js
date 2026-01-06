@@ -1,6 +1,6 @@
 function isPalindromeWord(word){
     isPWord = true;
-    let newWord = word.toLowerCase().replaceAll(" ","");
+    newWord = word.toLowerCase().replaceAll(" ","");
     reverse = "";
     for (let i = newWord.length - 1; i >= 0; i--){
         reverse = reverse + newWord[i]; 
