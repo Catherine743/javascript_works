@@ -8,14 +8,14 @@ for (let ch of word2) {
     count2 = 0;
 
     // count ch in word1
-    for (let i = 0; i < word1.length; i++) {
+    for (i = 0; i < word1.length; i++) {
         if (word1[i] === ch) {
             count1++;
         }
     }
 
     // count ch in word2
-    for (let i = 0; i < word2.length; i++) {
+    for (i = 0; i < word2.length; i++) {
         if (word2[i] === ch) {
             count2++;
         }
