@@ -40,8 +40,8 @@ function sumDig(n){
     if(n == 0){
         return sum; // or return 0
     }
-    // dig = n % 10;
-    // sum = sum + dig; 
+    dig = n % 10;
+    sum = sum + dig; 
     return sumDig(Math.floor(n / 10)) // or number%10 + sumDig(Math.floor(n / 10))
 }
 // console.log(sumDig(234));
