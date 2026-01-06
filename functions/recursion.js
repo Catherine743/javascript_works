@@ -53,7 +53,7 @@ function sumNum(n){
     if(n == 0){
         return sum; // or return 0;
     }
-    // sum = sum + n;
+    sum = sum + n;
     return sumNum(n - 1) // or return n + sumNum(n - 1)
 }
 
