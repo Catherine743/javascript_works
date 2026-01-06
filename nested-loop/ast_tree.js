@@ -1,40 +1,40 @@
-// for (r = 1; r <= 5; r++) {
-//     pattern = "";
-//     // space
-//     for (sp = 1; sp <= 5-r; sp++){
-//         pattern = pattern + "\t";
-//     }
-//     //astrick
-//     for (c = 1; c <= r; c++){
-//         pattern = pattern + "*\t\t"
-//     }
-//     console.log(pattern);
-
-
-// }
-
-let row = 5;
-let col = 9; // total columns to fit the pyramid
-let center = Math.floor(col / 2);
-
-for (let r = 1; r <= row; r++) {
-    let pattern = "";
-
-    let left = center - (r - 1);
-    let right = center + (r - 1);
-
-    for (let c = 0; c < col; c++) {
-        if (c >= left && c <= right) {
-            pattern += "*\t";
-            left += 2;
-        } 
-        else {
-            pattern += "\t";
-        }
+for (r = 1; r <= 5; r++) {
+    pattern = "";
+    // space
+    for (sp = 1; sp <= 5-r; sp++){
+        pattern = pattern + "\t";
     }
-
+    //astrick
+    for (c = 1; c <= r; c++){
+        pattern = pattern + "*\t\t"
+    }
     console.log(pattern);
+
+
 }
+
+//  row = 5;
+//  col = 9; // total columns to fit the pyramid
+//  center = Math.floor(col / 2);
+
+// for (r = 1; r <= row; r++) {
+//     pattern = "";
+
+//     left = center - (r - 1);
+//     right = center + (r - 1);
+
+//     for (let c = 0; c < col; c++) {
+//         if (c >= left && c <= right) {
+//             pattern += "*\t";
+//             left += 2;
+//         } 
+//         else {
+//             pattern += "\t";
+//         }
+//     }
+
+//     console.log(pattern);
+// }
 
 
 // let row = 5;
