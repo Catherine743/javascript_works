@@ -1,11 +1,11 @@
-let word1 = "observe";
-let word2 = "serve";
-let isKangaroo = true;
+word1 = "observe";
+word2 = "serve";
+isKangaroo = true;
 
 for (let ch of word2) {
 
-    let count1 = 0;
-    let count2 = 0;
+    count1 = 0;
+    count2 = 0;
 
     // count ch in word1
     for (let i = 0; i < word1.length; i++) {
