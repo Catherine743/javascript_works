@@ -1,11 +1,11 @@
-let word = "malayalam";
+word = "malayalam";
 
-for (let i = 0; i < word.length; i++) {
-    let count = 0;
-    let ch = word[i];
+for (i = 0; i < word.length; i++) {
+    count = 0;
+    ch = word[i];
 
-    let alreadyCounted = false;
-    for (let k = 0; k < i; k++) {
+    alreadyCounted = false;
+    for (k = 0; k < i; k++) {
         if (word[k] === ch) {
             alreadyCounted = true;
             break;
