@@ -13,7 +13,7 @@ for (i = 0; i < word.length; i++) {
     }
 }
 
-if (first !== -1) {
+if (first != -1) {
     console.log(
         ch,
         "→ First occurrence:", first,",",
