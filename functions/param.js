@@ -70,7 +70,7 @@ function numberChek(num){
     //     return res
         
     // }
-    // else if(num == 0){
+    // else if(num < 0){
         
     //     // return "negative"
     // }
