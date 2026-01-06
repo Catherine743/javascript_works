@@ -1,8 +1,8 @@
-let words = "hello world";
-let result = "";
-let temp = "";
+words = "hello world";
+result = "";
+temp = "";
 
-for (let i = 0; i < words.length; i++) {
+for (i = 0; i < words.length; i++) {
     if (words[i] !== ' ') {
         temp = words[i] + temp;   
     } else {
