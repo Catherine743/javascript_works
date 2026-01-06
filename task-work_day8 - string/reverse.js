@@ -3,7 +3,7 @@ result = "";
 temp = "";
 
 for (i = 0; i < words.length; i++) {
-    if (words[i] !== ' ') {
+    if (words[i] != ' ') {
         temp = words[i] + temp;   
     } else {
         result = result + temp + " ";
