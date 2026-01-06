@@ -1,8 +1,8 @@
-let word = "javascript";
-let ch = 'a';   // given character
+word = "javascript";
+ch = 'a';   // given character
 
-let first = -1;
-let last = -1;
+first = -1;
+last = -1;
 
 for (let i = 0; i < word.length; i++) {
     if (word[i] === ch) {
