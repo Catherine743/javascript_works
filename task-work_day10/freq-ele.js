@@ -1,14 +1,14 @@
-let arr = [1, 2, 2, 3, 1];
-let freq = [];
-let count = [];
-let freqArr = "";
+arr = [1, 2, 2, 3, 1];
+freq = [];
+count = [];
+freqArr = "";
 j = 0;
 
 
 for (let n of arr) {
-    let found = false;
+    found = false;
 
-    for (let i = 0; i < freq.length; i++) {
+    for (i = 0; i < freq.length; i++) {
         if (freq[i] === n) {
             count[i]++;
             found = true;
