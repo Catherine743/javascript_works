@@ -1,5 +1,5 @@
-let arr = [10,12,52,12,52,12,34,12,12];
-let newArr = [];
+arr = [10,12,52,12,52,12,34,12,12];
+newArr = [];
 
 for (let n of arr) {
     if (!newArr.includes(n)) {
