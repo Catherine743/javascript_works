@@ -1,14 +1,14 @@
-let str = "hello Javascript ";
+str = "hello Javascript ";
 text = str.toLowerCase();
 
-let word = "javascript";
+word = "javascript";
 word = word.toLowerCase()
 
 text = text.trim();
-let lastWord = "";   // declare outside
+lastWord = "";   // declare outside
 
 if (word.length == 1) {
-    let lastChar = text.at(-1);
+    lastChar = text.at(-1);
 
     if (lastChar === word) {
         console.log("String ends with the character");
