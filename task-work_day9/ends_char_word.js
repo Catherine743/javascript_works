@@ -15,7 +15,7 @@ if (word.length == 1) {
     } 
 }
 else {
-    for (let i = text.length - 1; i >= 0; i--) {
+    for (i = text.length - 1; i >= 0; i--) {
         if (text[i] == " ") {
             lastWord = text.substring(i + 1);
             break;
