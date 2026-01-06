@@ -10,7 +10,7 @@ lastWord = "";   // declare outside
 if (word.length == 1) {
     lastChar = text.at(-1);
 
-    if (lastChar === word) {
+    if (lastChar == word) {
         console.log("String ends with the character");
     } 
 }
