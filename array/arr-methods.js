@@ -9,7 +9,7 @@ array methods
 
 //search
 -> indexOf(value) => returns the index of the first occurrence of a value in an array
--> lastindexOf(value) => reurns the index of the last occurrence of a value in an array
+-> lastIndexOf(value) => reurns the index of the last occurrence of a value in an array
 -> includes(value) => whather the value exists in the array or not
 
 // extracting a portion
