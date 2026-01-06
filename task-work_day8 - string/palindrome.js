@@ -1,4 +1,4 @@
-var word = "malayalam";
+word = "malayalam";
 reverse = "";
 
 for(let ch of word){
