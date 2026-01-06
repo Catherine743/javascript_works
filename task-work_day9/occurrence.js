@@ -4,9 +4,9 @@ ch = 'a';   // given character
 first = -1;
 last = -1;
 
-for (let i = 0; i < word.length; i++) {
-    if (word[i] === ch) {
-        if (first === -1) {
+for (i = 0; i < word.length; i++) {
+    if (word[i] == ch) {
+        if (first == -1) {
             first = i;   // first occurrence
         }
         last = i;        // last occurrence
