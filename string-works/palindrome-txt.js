@@ -2,7 +2,7 @@ function isPalindromeWord(word){
     isPWord = true;
     newWord = word.toLowerCase().replaceAll(" ","");
     reverse = "";
-    for (let i = newWord.length - 1; i >= 0; i--){
+    for (i = newWord.length - 1; i >= 0; i--){
         reverse = reverse + newWord[i]; 
     }
     
