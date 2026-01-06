@@ -25,7 +25,7 @@ else {
     if (lastWord == "") {
         lastWord = text;
     }
-    if (lastWord === word) {
+    if (lastWord == word) {
         console.log("String ends with the word");
     } 
 }
