@@ -298,38 +298,38 @@ const films = [
 // 1. Create a new array that contains only the film name and year of release for each film in the format { name, yearOfRelease }
 
 nameYear = films.map(film => ({ name: film.name, yearOfRelease: film.yearOfRelease }));
-// console.log(nameYear);
+console.log(nameYear);
 
 // 2. Add a new property called isRecent to each film.
 // Set it to true if the film was released after 2015, otherwise false.
 
 filmsWithIsRecent = films.map(film => ({ isRecent: film.yearOfRelease > 2015 }));
-// console.log(filmsWithIsRecent);
+console.log(filmsWithIsRecent);
 
 // 3. Create a single array containing the names of all actors from every film.
 
 nameActors = films.map(film => [film.actors.map(actor => actor.name), film.name]);
-// console.log(nameActors);
+console.log(nameActors);
 
 // 4. Get all films that belong to the Action category.
 
 actionFilm = films.filter(film => film.category == "Action").map(film => film.name);
-// console.log(actionFilm);
+console.log(actionFilm);
 
 // 5. Find all films that were released before 2010.
 
 filmsBf2010 = films.filter(film => film.yearOfRelease < 2010).map(film => film.name);
-// console.log(filmsBf2010);
+console.log(filmsBf2010);
 
 // 6. Get all Malayalam films that are marked as Hit.
 
 malaFilmsHit = films.filter(film => film.language == "Malayalam" && film.status == "Hit").map(film => film.name);
-// console.log(malaFilmsHit);
+console.log(malaFilmsHit);
 
 // 7. Find all films that have more than one actor.
 
 moreThOneActor = films.filter(film => film.actors.length > 1).map(film => film.name);
-// console.log(moreThOneActor);
+console.log(moreThOneActor);
 
 // 8. Create an object that shows the total number of films per language.
 
@@ -345,13 +345,13 @@ for (let f of films) {
     }
 }
 
-// console.log(filmPerLang);
+console.log(filmPerLang);
 
 // 9. Find the oldest film based on the year of release
 
 oldestFilm = films.reduce((film1, film2) => film1.yearOfRelease < film2.yearOfRelease ? film1 : film2).yearOfRelease;
 oldFilm = films.filter(film => film.yearOfRelease == oldestFilm).map(film => [film.name, film.yearOfRelease]);
-// console.log(oldFilm);
+console.log(oldFilm);
 
 // 10. Count how many films are Hits and how many are Flops.
 
@@ -367,17 +367,17 @@ for (let f of films) {
     }
 }
 
-// console.log(filmStatus);
+console.log(filmStatus);
 
 // 11. Arrange the films from newest to oldest based on the release year.
 
-// filmsNewOld = films.sort((film1,film2) => film2.yearOfRelease - film1.yearOfRelease).map(film => [film.name,film.yearOfRelease]);
-// console.log(filmsNewOld);
+filmsNewOld = films.sort((film1,film2) => film2.yearOfRelease - film1.yearOfRelease).map(film => [film.name,film.yearOfRelease]);
+console.log(filmsNewOld);
 
 // 12. Arrange the films in alphabetical order by film name.
 
-// sortName = films.sort((film1,film2) => film1.name.localeCompare(film2.name)).map(film => film.name);
-// console.log(sortName);
+sortName = films.sort((film1,film2) => film1.name.localeCompare(film2.name)).map(film => film.name);
+console.log(sortName);
 
 // 13.  Check whether at least one film was released after 2020.
 
