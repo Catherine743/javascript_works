@@ -21,6 +21,8 @@
 
 // when it will initializes, it becomes attribute = "this" keyword => representing current instance
 
+// In javascript, this keyword refers to an object
+
 // var referenceName  = new ClassName() => object create
 
 // eg: var bellanoInstance = new car()
