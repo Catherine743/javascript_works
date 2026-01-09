@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <h1 id = 'head'>DOM MANIPULATION</h1>
+
+    <ul>
+        <li class = "cls">document.getElementById()</li>
+        <li>document.getElementsByClassName()</li>
+        <li>document.getElementsByTagName()</li>
+        <li class = "cls">document.querySelector()</li>
+        <li>document.querySelectorAll()</li>
+    </ul>
+
+    <button>Submit</button>
+
+    <script>
+        
+        // document.getElementById()
+        documentID = document.getElementById('head');
+        console.log(documentID)
+        documentID.style.color = "red";
+
+        // document.getElementsByClassName() // html collection
+        documentClass = document.getElementsByClassName('cls');
+        console.log(documentClass)
+
+        // convert HTML collection to array for js element like array,object
+        console.log(Array.from(documentClass));
+        console.log(Array.from(documentClass).map(item => item.style.color = "green"));
+
+        // document.getElementsByTagName()
+        documentTag = document.getElementsByTagName('li');
+        console.log(documentTag);
+
+        // convert HTML collection to array
+
+        console.log([...documentTag]);
+        console.log([...documentTag].map(item => item.style.color = "green"));
+
+        // document.querySelector()
+
+        query = document.querySelector('li');
+        console.log(query);
+
+        // document.querySelectorAll()
+
+        queryAll = document.querySelectorAll('li');
+        console.log(queryAll)
+    </script>
+</body>
+</html>
