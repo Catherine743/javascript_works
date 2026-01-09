@@ -16,7 +16,7 @@
         <li>document.querySelectorAll()</li>
     </ul>
 
-    <button>Submit</button>
+    <button class="btn" onclick="btnClick()">Submit</button>
 
     <script>
         
@@ -61,6 +61,13 @@
 
         queryCls = document.querySelectorAll('.cls');
         console.log(queryCls)
+        
+        querybtn = document.querySelector('.btn');
+        console.log(querybtn);
+        
+        function btnClick(){
+            alert("Button Clicked")
+        }
     </script>
 </body>
 </html>
