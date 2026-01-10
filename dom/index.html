@@ -15,34 +15,34 @@
         <li class = "cls">document.querySelector()</li>
         <li>document.querySelectorAll()</li>
     </ul>
-
+                                 // function call
     <button class="btn" onclick="btnClick()">Submit</button>
 
     <script>
         
         // document.getElementById()
-        documentID = document.getElementById('head');
+        documentID = document.getElementById('head'); // DOM method of javascript
         console.log(documentID)
-        documentID.style.color = "red";
+        documentID.style.color = "red"; // color change using javascript to DOM
 
-        // document.getElementsByClassName() // html collection
-        documentClass = document.getElementsByClassName('cls');
+        // document.getElementsByClassName() // html collection array// multiple elements select - class
+        documentClass = document.getElementsByClassName('cls'); // can not apply direct for styling because of html collection, now, we are changing using javascript. We can apply javascript when it assign it to a variable, array or object. So, javascript should be converted into a form.
         console.log(documentClass)
 
         // convert HTML collection to array for js element like array,object
-        console.log(Array.from(documentClass));
-        console.log(Array.from(documentClass).map(item => item.style.color = "green"));
+        console.log(Array.from(documentClass)); // convert to array
+        console.log(Array.from(documentClass).map(item => item.style.color = "green")); // color change to array => array
 
         // document.getElementsByTagName()
-        documentTag = document.getElementsByTagName('li');
+        documentTag = document.getElementsByTagName('li'); // html collection
         console.log(documentTag);
 
         // convert HTML collection to array
 
-        console.log([...documentTag]);
+        console.log([...documentTag]); // copy from above => array
         console.log([...documentTag].map(item => item.style.color = "green"));
 
-        // document.querySelector()
+        // document.querySelector() // select single element instead of id 
 
         query = document.querySelector('li');
         console.log(query);
@@ -54,7 +54,7 @@
 
         // document.querySelectorAll()
 
-        queryAll = document.querySelectorAll('li');
+        queryAll = document.querySelectorAll('li'); // multipli elements select // id -> #, class => . // no issues in class and efficient working
         console.log(queryAll)
 
         // document.querySelectorAll()
