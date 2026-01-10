@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id='head'>DOM getElementsByTagName()</h1>
+    <p>This is the first paragraph</p>
+    <p>This is the second paragraph</p>
+    <p>This is the third paragraph</p>
+
+    <button onclick="btnClick()">Use Tag</button>
+
+    <script>
+
+        documentId = document.getElementById('head');
+        documentId.style.color = "green";
+
+        documentTag = document.getElementsByTagName('p');
+        function btnClick() {
+            for (let item of documentTag) {
+                item.style.color = "blue";
+                item.style.backgroundColor = "pink";
+            }
+            // for (let i = 0; i < documentTag.length; i++) {
+            //    documentTag[i].style.color = "blue";
+            //    documentTag[i].style.backgroundColor = "pink";
+            // } --!>
+        }
+    </script>
+</body>
+
+</html>
