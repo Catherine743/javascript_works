@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="text-center space-y-10 mt-10">
+    <h1 class="text-blue-800 text-3xl font-bold">Random Number Generation</h1>
+    <button class="bg-blue-800 text-white p-2 rounded-lg" onclick="randomNum()">Random Number</button>
+    <script>
+        function randomNum() {
+            randomNumber = Math.floor(Math.random()*100);
+            console.log(randomNumber);
+            alert("Your random num is :" + randomNumber)
+        }
+    </script>
+</body>
+</html>
