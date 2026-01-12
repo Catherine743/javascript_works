@@ -7,7 +7,7 @@ class Bank { // here db is the property of the class
 
     // 1. validate function
     validate(acno) {
-        return acno in this.db ? true : false;
+        return acno in this.db ;
     }
 
     // 2. authenticate function
