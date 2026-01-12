@@ -7,13 +7,14 @@ class Bank { // here db is the property of the class
 
     // 1. validate function
     validate(acno) {
-        return acno in this.db ;
+        return acno in this.db  ;
     }
 
     // 2. authenticate function
     authenticate(acno, pswd) {
         if (this.validate(acno)) {
-            if (pswd == this.db[acno].password) {
+            var actualpswd = this.db[acno].password
+            if (pswd == actualpswd) {
                 console.log("Access granted");
 
             }
