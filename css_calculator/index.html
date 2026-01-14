@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="align">
+    <div class="gap">
+        <h3 class="head">CASIO</h3>
+        <div class="calculator">
+            <input type="text" class="input-sty" placeholder="0" id="result">
+            <button class="btn clr-btn"><i class="fa-solid fa-delete-left"></i></button>
+        </div>
+        <div class="calculator">
+            <button class="btn" onclick="displayNum(7)">7</button>
+            <button class="btn" onclick="displayNum(8)">8</button>
+            <button class="btn" onclick="displayNum(9)">9</button>
+            <button class="btn" onclick="displayNum('*')">*</button>
+        </div>
+        <div class="calculator">
+            <button class="btn" onclick="displayNum(4)">4</button>
+            <button class="btn" onclick="displayNum(5)">5</button>
+            <button class="btn" onclick="displayNum(6)">6</button>
+            <button class="btn" onclick="displayNum('-')">-</button>
+        </div>
+        <div class="calculator">
+            <button class="btn" onclick="displayNum(1)">1</button>
+            <button class="btn" onclick="displayNum(2)">2</button>
+            <button class="btn" onclick="displayNum(3)">3</button>
+            <button class="btn" onclick="displayNum('+')">+</button>
+        </div>
+        <div class="calculator last-row">
+           <button class="btn" onclick="displayNum('.')">.</button>
+           <button class="btn" onclick="displayNum(0)">0</button>
+           <button class="btn" onclick="displayNum('/')">/</button>
+           <button class="btn" >=</button>
+        </div>
+        <div class="calculator">
+            <button class="btn ac" onclick="clearBox()">AC</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

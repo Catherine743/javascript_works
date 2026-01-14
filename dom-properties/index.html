@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--1. parentNode: Returns the parent node of an element.  -->
+    <div id = 'parent'>
+        <div id = 'child'>
+            Parent
+        </div>
+    </div>
+
+    <!--2. childNodes : Return the nodelist of an element  -->
+
+    <ul id="divEle">
+        <li>Child</li>
+        <li>Child</li>
+        <li>Child</li>
+        <li>Child</li>
+    </ul>
+
+    <!-- 3. innerHTML - sets a content to HTML DOM -->
+
+    <div id= 'innerEle'>
+        <p>Web Developer</p>
+    </div>
+
+    <!-- 4. textContent - sets a text content to html dom -->
+
+    <div id= 'text'>
+        <h2>WebDeveloper</h2>
+    </div>
+    
+    <script>
+        childEle = document.getElementById('child');
+        console.log(childEle);
+        parentEle = childEle.parentNode
+        console.log(parentEle);
+
+        listEles = document.getElementById('divEle');
+        console.log(listEles);
+        childList = listEles.childNodes
+        console.log(childList)
+
+        innerCon = document.getElementById('innerEle');
+        console.log(innerCon);
+        innerCon.innerHTML = '<h1 style = "color:blue"> Lumniar Technolab </h1>'
+
+        textEle = document.getElementById('text');
+        console.log(textEle);
+        textEle.textContent = "MEARN STACK WEB DEVELOPER"
+    </script>
+</body>
+</html>
+
