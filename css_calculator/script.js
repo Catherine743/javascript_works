@@ -10,3 +10,12 @@ function clearBox(){
 
 // 3. Evaluate expression
 
+function evaluateExp() {
+    result.value = eval(result.value)
+}
+
+// 4. Remove last item from text box
+
+function removeLastItem() {
+    result.value = result.value.slice(0,-1)
+}

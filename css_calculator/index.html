@@ -12,7 +12,7 @@
         <h3 class="head">CASIO</h3>
         <div class="calculator">
             <input type="text" class="input-sty" placeholder="0" id="result">
-            <button class="btn clr-btn"><i class="fa-solid fa-delete-left"></i></button>
+            <button class="btn clr-btn" onclick="removeLastItem()"><i class="fa-solid fa-delete-left"></i></button>
         </div>
         <div class="calculator">
             <button class="btn" onclick="displayNum(7)">7</button>
@@ -36,7 +36,7 @@
            <button class="btn" onclick="displayNum('.')">.</button>
            <button class="btn" onclick="displayNum(0)">0</button>
            <button class="btn" onclick="displayNum('/')">/</button>
-           <button class="btn" >=</button>
+           <button class="btn" onclick="evaluateExp()">=</button>
         </div>
         <div class="calculator">
             <button class="btn ac" onclick="clearBox()">AC</button>
