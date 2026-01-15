@@ -9,7 +9,3 @@ function backSpace() {
 function enterBtn() {
     result.value += '\n'
 }
-
-function capsBtn() {
-    
-}
