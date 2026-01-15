@@ -8,7 +8,7 @@
 </head>
 <body class="h-screen flex justify-center items-center bg-zinc-800">
     <div class="p-5 bg-zinc-500 space-y-3 rounded-md">
-        <textarea placeholder="Type here..." rows="3" cols="88" class="rounded-lg bg-white p-3"></textarea>
+        <textarea placeholder="Type here..." rows="3" cols="88" class="rounded-lg bg-white p-3" id="result"></textarea>
         <div>
             <button class="px-6 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum(1)">1</button>
             <button class="px-6 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum(2)">2</button>
@@ -20,7 +20,7 @@
             <button class="px-6 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum(8)">8</button>
             <button class="px-6 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum(9)">9</button>
             <button class="px-6 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum(0)">0</button>
-            <button class="py-2 bg-stone-800 text-white px-12 rounded-md hover:bg-zinc-700 hover:border-white" onclick="">Backspace</button>
+            <button class="py-2 bg-stone-800 text-white px-12 rounded-md hover:bg-zinc-700 hover:border-white active:bg-zinc-600 transition" onclick="backSpace()">Backspace</button>
         </div>
         <div>
             <button class="px-8 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum('-')">-</button>
@@ -35,7 +35,7 @@
             <button class="px-8 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum('*')">*</button>
         </div>
         <div>
-            <button class="px-10 py-2 bg-stone-800 text-white rounded-md hover:bg-zinc-700 hover:border-white" onclick="">Caps</button>
+            <button class="px-10 py-2 bg-stone-800 text-white rounded-md hover:bg-zinc-700 hover:border-white active:bg-zinc-600 transition" onclick="">Caps</button>
             <button class="px-5 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum('Q')">Q</button>
             <button class="px-5 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum('W')">W</button>
             <button class="px-5 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum('E')">E</button>
@@ -46,7 +46,7 @@
             <button class="px-5 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum('I')">I</button>
             <button class="px-5 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum('O')">O</button>
             <button class="px-5 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum('P')">P</button>
-            <button class="px-10 py-2 bg-stone-800 text-white rounded-md hover:bg-zinc-700 hover:border-white" onclick="">Enter</button>
+            <button class="px-10 py-2 bg-stone-800 text-white rounded-md hover:bg-zinc-700 hover:border-white active:bg-zinc-600 transition" onclick="enterBtn()">Enter</button>
         </div>
         <div>
             <button class="px-9 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum('A')">A</button>
@@ -67,8 +67,9 @@
             <button class="px-9 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum('B')">B</button>
             <button class="px-9 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum('N')">N</button>
             <button class="px-9 py-2 text-white border rounded-md hover:bg-white hover:text-black hover:border-white" onclick="alphaNum('M')">M</button>
-            <button class="px-17 py-2 bg-stone-800 text-white rounded-md hover:bg-zinc-700 hover:border-white" onclick="alphaNum(' ')">Space</button>
+            <button class="px-17 py-2 bg-stone-800 text-white rounded-md hover:bg-zinc-700 hover:border-white active:bg-zinc-600 transition" onclick="alphaNum(' ')">Space</button>
         </div>
     </div>
 </body>
+<script src="./keyboard.js"></script>
 </html>
