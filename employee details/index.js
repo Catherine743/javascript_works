@@ -10,11 +10,11 @@ function addEmployee() {
         exp: empExp.value,
         sal: empSal.value
     }
-    if(employee.id in localStorage) {
+    if (employee.id in localStorage) {
         alert("Already exists")
     }
     else {
-        localStorage.setItem(employee.id,JSON.stringify(employee))
+        localStorage.setItem(employee.id, JSON.stringify(employee))
         alert("Employee details created");
         empId.value = ""
         empName.value = ""
@@ -31,16 +31,36 @@ function searchBtn() {
 
     result.innerHTML = `
       <div class="flex justify-center text-center">
-        <div class="bg-white w-1/3 border-2 rounded-lg">
-            <h1 class="text-3xl text-center">Employee Details</h1>
-             <ul class="space-y-5 m-5">
-                <li class="text-xl ">ID : ${employee.id}</li>
-                <li class="text-xl ">Name : ${employee.name}</li>
-                <li class="text-xl ">Address : ${employee.addr}</li>
-                <li class="text-xl ">Designation :${employee.desg}</li>
-                <li class="text-xl ">Experience : ${employee.exp}</li>
-                <li class="text-xl ">Salary : ${employee.sal}</li>
-             </ul>
+        <div class="bg-white w-1/2 border-2 rounded-lg p-2">
+            <h1 class="text-3xl text-center text-blue-500">Employee Details</h1>
+            <table class="w-full text-left mt-5">
+                <tbody>
+                    <tr class="border-b">
+                        <th class="p-3 bg-gray-100">ID</th>
+                        <td class="p-3">${employee.id}</td>
+                    </tr>
+                    <tr class="border-b">
+                        <th class="p-3 bg-gray-100">Name</th>
+                        <td class="p-3">${employee.name}</td>
+                    </tr>
+                    <tr class="border-b">
+                        <th class="p-3 bg-gray-100">Address</th>
+                        <td class="p-3">${employee.addr}</td>
+                    </tr>
+                    <tr class="border-b">
+                        <th class="p-3 bg-gray-100">Designation</th>
+                        <td class="p-3">${employee.desg}</td>
+                    </tr>
+                    <tr class="border-b">
+                        <th class="p-3 bg-gray-100">Experience</th>
+                        <td class="p-3">${employee.exp}</td>
+                    </tr>
+                    <tr>
+                        <th class="p-3 bg-gray-100">Salary</th>
+                        <td class="p-3">${employee.sal}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         </div>
     `
