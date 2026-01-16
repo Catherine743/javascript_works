@@ -3,7 +3,7 @@ function loginBtn() {
     console.log(username);
 
     // add username to localstorage
-    localStorage.setItem('user', username);
+    localStorage.setItem('USERNAME', username);
 
     // redirect to home
     window.location = './welcome.html'
