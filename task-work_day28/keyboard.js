@@ -1,8 +1,12 @@
 result = document.getElementById('result');
 
 function alphaNum(btn) {
-    result.focus()
-    result.value += btn.textContent;
+    result.focus();
+    if (btn.textContent === "Space") {
+        result.value += " ";
+    } else {
+        result.value += btn.textContent;
+    }
 }
 
 function backSpace() {
