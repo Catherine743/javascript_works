@@ -1,5 +1,3 @@
-result = document.getElementById('result');
-
 function alphaNum(btn) {
     result.focus();
     if (btn.textContent === "Space") {
