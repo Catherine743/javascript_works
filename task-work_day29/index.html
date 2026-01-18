@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <h1 class="text-3xl text-center text-blue-600 font-semibold m-5">Car World</h1>
+    <div class="flex justify-center space-x-3">
+        <div class="w-1/4 shadow-xl/10 space-y-2 p-10 border-3 border-gray-200 rounded-md">
+            <h3 class="text-xl text-center text-blue-600 font-semibold">Enter Details</h3>
+            <p>Car Brand</p>
+            <div>
+                <input type="text" placeholder="Car Brand" class="rounded-md border border-zinc-500 p-1 w-3/4" id="carBrand">
+            </div>
+            <p>Price</p>
+            <div>
+                <input type="text" placeholder="Price" class="rounded-md border border-zinc-500 p-1 w-3/4" id="carPrice">
+            </div>
+            <p>Key</p>
+            <div>
+                <input type="text" placeholder="Key" class="rounded-md border border-zinc-500 p-1 w-3/4" id="carKey">
+            </div>
+            <div class="text-center">
+                <button class="text-green-600 border-2 rounded-md p-2 mt-4 hover:bg-green-600 hover:text-white" onclick="storeBtn()">Store Records</button>
+            </div>
+        </div>
+        <div class="w-1/5 shadow-xl/10 space-y-2 p-10 border-3 border-gray-200 rounded-md">
+            <h3 class="text-xl text-center text-blue-600 font-semibold">Enter Key to Retrieve Item</h3>
+            <p>Key</p>
+            <div>
+                <input type="text" placeholder="Key" class="rounded-md border border-zinc-500 p-1 w-3/4" id="keyValue">
+            </div>
+            <p id="retResult"></p>
+            <div class="text-center">
+                <button class="text-blue-600 border-2 rounded-md p-2 mt-4 hover:bg-blue-600 hover:text-white" onclick="retrieveBtn()">Retrieve Records</button>
+            </div>
+        </div>
+        <div class="w-1/5 shadow-xl/10 space-y-2 p-10 border-3 border-gray-200 rounded-md">
+            <h3 class="text-xl text-center text-blue-600 font-semibold">Enter Key to Delete Item</h3>
+            <p>Key</p>
+            <div>
+                <input type="text" placeholder="Key" class="rounded-md border border-zinc-500 p-1 w-3/4" id="keyElement">
+            </div>
+            <p id="dltResult"></p>
+            <div class="text-center">
+                <button class="text-red-600 border-2 rounded-md p-2 mt-4 hover:bg-red-600 hover:text-white" onclick="removeBtn()">Remove Records</button>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center">
+        <button class="rounded-md border w-[980px] p-2 mt-5" onclick="clearBtn()">Clear All Records</button>
+    </div>
+</body>
+<script src="./car.js"></script>
+</html>
