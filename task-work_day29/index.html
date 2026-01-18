@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class=" bg-[url('./images/BMI.jpg')] bg-cover bg-center flex justify-center">
+    <div class="w-3/4 space-y-3 pb-10">
+        <div class="bg-white/80 p-6 rounded-lg space-y-3">
+            <h1 class="text-4xl font-bold text-center text-blue-900">BMI Calculator</h1>
+            <h2 class="text-3xl font-semibold text-center text-blue-900">Body Mass Index</h2>
+        </div>
+        <div class="bg-white/60 p-10 space-y-5 rounded-lg">
+            <div class="flex space-x-10">
+                <div class="space-y-5 w-full pl-10">
+                    <p class="font-semibold text-blue-900 text-2xl">Gender </p>
+                    <div class="space-x-5 flex space-y-5">
+                        <div class="text-xl">
+                            <input type="radio" name="Gender"> <label for="">Male</label>
+                        </div>
+                        <div class="text-xl">
+                            <input type="radio" name="Gender"> <label for="">Female</label>
+                        </div>
+                    </div>
+                    <p class="font-semibold text-blue-900 text-2xl">Age (2yrs and above)</p>
+                    <div>
+                        <input type="text" placeholder="Your age in yrs"
+                            class="bg-white border-gray-300 rounded-md w-3/4 p-2 border-2">
+                    </div>
+                </div>
+                <div class="space-y-5 w-full">
+                    <p class="font-semibold text-blue-900 text-2xl">Weight</p>
+                    <div class="space-y-5">
+                        <input type="text" placeholder="Your weight in kgs"
+                            class="bg-white border-gray-300 rounded-md p-2 border-2 w-3/4">
+                    </div>
+                    <p class="font-semibold text-blue-900 text-2xl">Height</p>
+                    <div>
+                        <input type="text" placeholder="Your height in cms"
+                            class="bg-white border-gray-300 rounded-md p-2 border-2 w-3/4">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center space-x-10">
+                <button
+                    class="p-2 rounded-md text-blue-900 border-2 hover:text-white hover:bg-blue-900">Calculate</button>
+                <button class="p-2 rounded-md text-blue-900 border-2 hover:text-white hover:bg-blue-900">Reset</button>
+            </div>
+        </div>
+        <div class="bg-white/80 p-2 rounded-md">
+            <h1 class="text-3xl text-center text-blue-900 font-bold">YOUR BMI IS</h1>
+        </div>
+    </div>
+</body>
+
+</html>
