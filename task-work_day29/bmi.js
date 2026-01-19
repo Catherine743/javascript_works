@@ -8,9 +8,6 @@ function calculateBtn() {
     if (!weightVal || !heightVal || !ageVal) {
         alert("Please fill all the fields");
     }
-    else if (isNaN(weightVal) || isNaN(heightVal) || isNaN(ageVal)) {
-        alert("please enter numeric values")
-    }
     else if (weightVal <= 0 || heightVal <= 0 || ageVal >= 2) {
         alert("Please enter valid values")
     }
