@@ -29,32 +29,33 @@
                     <p class="font-semibold text-blue-900 text-2xl">Age (2yrs and above)</p>
                     <div>
                         <input type="text" placeholder="Your age in yrs"
-                            class="bg-white border-gray-300 rounded-md w-3/4 p-2 border-2">
+                            class="bg-white border-gray-300 rounded-md w-3/4 p-2 border-2" id="age">
                     </div>
                 </div>
                 <div class="space-y-5 w-full">
                     <p class="font-semibold text-blue-900 text-2xl">Weight</p>
                     <div class="space-y-5">
                         <input type="text" placeholder="Your weight in kgs"
-                            class="bg-white border-gray-300 rounded-md p-2 border-2 w-3/4">
+                            class="bg-white border-gray-300 rounded-md p-2 border-2 w-3/4" id="weight">
                     </div>
                     <p class="font-semibold text-blue-900 text-2xl">Height</p>
                     <div>
                         <input type="text" placeholder="Your height in cms"
-                            class="bg-white border-gray-300 rounded-md p-2 border-2 w-3/4">
+                            class="bg-white border-gray-300 rounded-md p-2 border-2 w-3/4" id="height">
                     </div>
                 </div>
             </div>
             <div class="text-center space-x-10">
                 <button
-                    class="p-2 rounded-md text-blue-900 border-2 hover:text-white hover:bg-blue-900">Calculate</button>
-                <button class="p-2 rounded-md text-blue-900 border-2 hover:text-white hover:bg-blue-900">Reset</button>
+                    class="p-2 rounded-md text-blue-900 border-2 hover:text-white hover:bg-blue-900" onclick="calculateBtn()">Calculate</button>
+                <button class="p-2 rounded-md text-blue-900 border-2 hover:text-white hover:bg-blue-900" onclick="resetBtn()">Reset</button>
             </div>
         </div>
         <div class="bg-white/80 p-2 rounded-md">
-            <h1 class="text-3xl text-center text-blue-900 font-bold">YOUR BMI IS</h1>
+            <h1 class="text-3xl text-center text-blue-900 font-bold mb-5">YOUR BMI IS</h1>
+            <div id="result" class="text-center space-y-3"></div>
         </div>
     </div>
 </body>
-
+<script src="./bmi.js"></script>
 </html>
