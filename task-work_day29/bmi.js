@@ -8,7 +8,7 @@ function calculateBtn() {
     if (!weightVal || !heightVal || !ageVal) {
         alert("Please fill all the fields");
     }
-    else if (weightVal <= 0 || heightVal <= 0 || ageVal >= 2) {
+    else if (weightVal < 1 || heightVal < 45 || ageVal < 1) {
         alert("Please enter valid values")
     }
     else {

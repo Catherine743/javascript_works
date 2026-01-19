@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="space-y-5">
+    <h1 class="text-center text-blue-900 text-3xl font-semibold">ToDo Data</h1>
+    <div class="flex justify-center">
+        <table class="text-blue-900">
+            <thead>
+                <tr class="border-3 border-blue-900 ">
+                    <th class="border-r-2 border-blue-900 text-center w-20 h-10">userId</th>
+                    <th class="border-r-2 border-blue-900 text-center w-20 h-10">Id</th>
+                    <th class="border-r-2 border-blue-900 text-center w-50 h-10">Title</th>
+                    <th class="w-20 h-10 text-center">Completed</th>
+                </tr>
+            </thead>
+            <tbody id="result"></tbody>
+        </table>
+    </div>
+    <script>
+        // AJAX API Call
+
+        // 1. Create a new XMLHttpRequest object
+        response = new XMLHttpRequest();
+
+        // 2. Connect API Call
+        response.open('get', 'https://jsonplaceholder.typicode.com/todos');
+
+        // 3. Send
+        response.send();
+
+        // 4. Set Onreadystate Change
+
+        response.onreadystatechange = () => {
+            if (response.readyState == 4) {
+                if (response.status > 199 && response.status < 300) {
+                    // console.log(response.responseText);
+                    todoArray = JSON.parse(response.responseText);
+                    // console.log(todoArray)
+                    displayData(todoArray);
+                }
+            }
+        }
+
+        // 5. Display array of data into the browser
+
+        function displayData(todoArray) {
+            for (let todo of todoArray) {
+                htmlData = `
+                <tr class="border-3 border-blue-900 ">
+                    <td class="border-r-2 border-blue-900 text-center w-30 h-10">${todo.userId}</td>
+                    <td class="border-r-2 border-blue-900 text-center w-30 h-10">${todo.id}</td>
+                    <td class="border-r-2 border-blue-900 text-center w-30 h-10">${todo.title}</td>
+                    <td class="w-30 h-10 text-center">${todo.completed}</td>
+                </tr>`
+                result.innerHTML += htmlData
+            }
+        } 
+    </script>
+</body>
+
+</html>
