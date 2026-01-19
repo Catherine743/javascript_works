@@ -1,14 +1,13 @@
 function calculateBtn() {
     weightVal = weight.value;
     heightVal = height.value;
-    ageVal = age.value;
     heightMet = heightVal / 100;
     bmi = weightVal / (heightMet * heightMet);
 
-    if (!weightVal || !heightVal || !ageVal) {
+    if (!weightVal || !heightVal) {
         alert("Please fill all the fields");
     }
-    else if (weightVal < 1 || heightVal < 45 || ageVal < 1) {
+    else if (weightVal < 1 || heightVal < 45) {
         alert("Please enter valid values")
     }
     else {
@@ -43,7 +42,5 @@ function calculateBtn() {
 function resetBtn() {
     weight.value = "";
     height.value = "";
-    age.value = "";
-    result.innerHTML = "";
 }
 
