@@ -8,6 +8,9 @@ function calculateBtn() {
     if (!weightVal || !heightVal || !ageVal) {
         alert("Please fill all the fields");
     }
+    else if (isNaN(weightVal) || isNaN(heightVal) || isNaN(ageVal)) {
+        alert("please enter valid number")
+    }
     else {
         if (bmi < 18) {
             result.innerHTML =
