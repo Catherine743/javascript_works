@@ -41,5 +41,6 @@ function resetBtn() {
     weight.value = "";
     height.value = "";
     age.value = "";
+    result.innerHTML = "";
 }
 
