@@ -42,5 +42,6 @@ function calculateBtn() {
 function resetBtn() {
     weight.value = "";
     height.value = "";
+    result.innerHTML = "";
 }
 
