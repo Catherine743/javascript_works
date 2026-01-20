@@ -44,7 +44,7 @@ console.log(maxTwo(35,12));
 // normal fun - hoisting support
 // arrow fun  - does not support hoisting
 
-// hoisting means funtion will be hoisted when the function calls before it defines and will run the program.
+// hoisting means function will be hoisted when the function calls before it defines and will run the program.
 
 // hoisting support based on keyword function
 
