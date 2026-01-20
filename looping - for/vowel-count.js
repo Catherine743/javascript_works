@@ -1,5 +1,5 @@
 var text = "HelloWorld";
-text.toLowerCase()
+text = text.toLowerCase()
 var count = 0;
 
 for(let ch of text){
