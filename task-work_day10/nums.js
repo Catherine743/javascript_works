@@ -1,4 +1,4 @@
-var numbers = [2, 3, 4, 5, 6, 7, 7, 8, 3, 9, 9, 7];
+var numbers = [2, 3, 4, 5, 6, 7, 7, 8, 3, 9, 9, 7, 9];
 
 // min = numbers[0];
 // for(let n of numbers){
@@ -75,8 +75,8 @@ var numbers = [2, 3, 4, 5, 6, 7, 7, 8, 3, 9, 9, 7];
 let result = [];
 let used = [];
 i = 0; 
-let count;
 let num;
+newRes = "";
 
 for (let n of numbers) {
     let found = false;
@@ -96,18 +96,30 @@ for (let n of numbers) {
     }
 }
 
-// find most frequent
-let max = used[0];
-num = result[0];
+// find most frequent -> if there is only one element
+// let max = used[0];
+// num = result[0];
 
-for (let i = 1; i < used.length; i++) {
-    if (used[i] > max) {
-        max = used[i];
-        num = result[i];
+// for (let i = 1; i < used.length; i++) {
+//     if (used[i] > max) {
+//         max = used[i];
+//         num = result[i];
+//     }
+// }
+
+for(i = 0; i < used.length; i++) {
+    if(max == used[i]) {
+        if(newRes == "") {
+            newRes = result[i];
+
+        }
+        else {
+            newRes = newRes + ", " + result[i];
+        }
+        
     }
 }
-
-console.log("Most frequent number:", num);
+console.log("Most frequent number:", newRes);
 console.log("Frequency:", max);
 
 
