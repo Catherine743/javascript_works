@@ -2,7 +2,7 @@ arr = [1, 2, 2, 3, 1];
 freq = [];
 count = [];
 freqArr = "";
-j = 0;
+j = 0; // or i = 0;
 
 
 for (let n of arr) {
@@ -17,9 +17,9 @@ for (let n of arr) {
     }
 
     if (!found) {
-        freq[j] = n;
-        count[j] = 1;
-        j++; 
+        freq[j] = n; // or freq[i] = n;
+        count[j] = 1; // or freq[i] = 1;
+        j++; // or i++;
     }
 }
 
