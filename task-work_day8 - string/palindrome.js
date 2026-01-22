@@ -1,8 +1,8 @@
-word = "malayalam";
+word = "banana";
 reverse = "";
 
 for(let ch of word){
-    reverse = reverse + ch;
+    reverse =  ch + reverse;
 }
 
 console.log(word == reverse? "Palindrome" : "Not palindrome");
