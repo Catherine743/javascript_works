@@ -4,11 +4,13 @@ var i = 1;
 var j = 0;
 
 for (let n of arr) {
-    if (arr[i] != n) {
-        newArr[j] = n;
-        j++;
-    } else {
-        temp = n;
+
+    newArr[j] = n;   // always add current number
+    j++;
+
+    if (i < arr.length) {
+        temp = n + 1;
+
         while (temp < arr[i]) {
             newArr[j] = temp;
             j++;
