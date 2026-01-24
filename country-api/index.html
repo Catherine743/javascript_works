@@ -21,8 +21,8 @@
         </div>
     </div>
     <div class="flex w-1/2 mx-auto space-x-20 mt-10">
-        <div id="result" class="w-full"></div>
-        <div id="imgs" class="w-full"></div>
+        <div id="result"></div>
+        <div id="imgs"></div>
     </div>
 </body>
 
@@ -50,8 +50,8 @@
         region = countries[0].region;
         coatOfArms = countries[0].coatOfArms.png;
         htmlData =`
-        <div class = "border-2 border-black space-y-2 text-center">
-            <img class="w-full text-center" src = "${flags}">
+        <div class = "border-2 border-black space-y-2 text-center w-full">
+            <img class = "w-full text-center" src = "${flags}">
             <h3 class = "text-3xl font-semibold">${name}</h3>
             <p class = "text-justify p-5">${content}</p>
             <ul>
@@ -63,9 +63,8 @@
         result.innerHTML = htmlData
 
         htmlDataOne = `
-        <div>
-            <img src = "${coatOfArms}">
-        </div>`
+            <img class = "w-full" src = "${coatOfArms}">
+            `
         imgs.innerHTML = htmlDataOne
     }
 
