@@ -8,16 +8,21 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="flex justify-center">
-    <div class="mt-5 space-y-10 bg-green-300 w-1/4 text-center py-10 rounded-lg">
-        <div>
-            <input type="text" placeholder="Enter country name"
-                class="bg-white p-2 rounded-lg border-grey-400 border-2">
+<body>
+    <div class="flex justify-center">
+        <div class="mt-5 space-y-10 bg-green-300 w-1/4 text-center py-10 rounded-lg">
+            <div>
+                <input type="text" placeholder="Enter country name"
+                    class="bg-white p-2 rounded-lg border-grey-400 border-2" id="country">
+            </div>
+            <div>
+                <button class="p-2 text-black border rounded-md bg-white" onclick="searchData()">Submit</button>
+            </div>
         </div>
-        <div>
-            <button class="p-2 text-black border rounded-md bg-white" onclick="searchData()">Submit</button>
-        </div>
-        <div id="result"></div>
+    </div>
+    <div class="flex w-1/2 mx-auto space-x-20 mt-10">
+        <div id="result" class="w-full"></div>
+        <div id="imgs" class="w-full"></div>
     </div>
 </body>
 
@@ -25,33 +30,43 @@
 
     // 1. 
     function searchData() {
-        country = result.value;
-        fetch('https://restcountries.com/v3.1/name/${country.value}?fullText=true') // by default get
-            .then(data => data.json())
-            .then(countries => displayContent(countries))
-            .catch(err => console.log(err));
+        countryName = country.value;
+        console.log(countryName)
+        fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`) // by default get
+            .then(data => data.json()) // array of data
+            .then(countries => displayContent(countries)) // function call
+            .catch(err => {
+                alert('Failed to fetch country details')
+            });
     }
 
     // 2. 
     function displayContent(countries) {
-        for(let country of countries) {
-        htmlData =
-        `
-        <div class = "flex space-x-10">
-        <div>
-            <img src = "${country.flags.png}">
-            <h3>${country.common}</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit error temporibus delectus, doloribus facere commodi illum nemo adipisci asperiores aperiam quisquam, modi hic, quia iste sit sint ad veritatis similique.</p>
-            <h4><span>Capital:</span>${country.capital}</span></h4>
-        </div>
-        <div>
-            <img src = "${country.coatOfArms.png}">
-        </div>
-        </div>
-        `
+        capital = countries[0].capital[0];
+        flags = countries[0].flags.png;
+        name = countries[0].name.common;
+        content = countries[0].flags.alt;
+        currencies = Object.values(countries[0].currencies)[0].symbol;
+        region = countries[0].region;
+        coatOfArms = countries[0].coatOfArms.png;
+        htmlData =`
+        <div class = "border-2 border-black space-y-2 text-center">
+            <img class="w-full text-center" src = "${flags}">
+            <h3 class = "text-3xl font-semibold">${name}</h3>
+            <p class = "text-justify p-5">${content}</p>
+            <ul>
+                <li class = "border-y h-[40px] flex items-center justify-center space-x-2"><span class = "text-xl font-semibold">Capital : </span><span> ${capital} </span></li>
+                <li class = "border-b h-[40px] flex items-center justify-center space-x-2"><span class = "text-xl font-semibold">Currencies : </span><span> ${currencies} </span></li>
+                <li class = "h-[40px] flex items-center justify-center space-x-2"><span class = "text-xl font-semibold">Region : </span> <span> ${region}</span></li>
+            </ul>
+        </div>`
         result.innerHTML = htmlData
 
-        }
+        htmlDataOne = `
+        <div>
+            <img src = "${coatOfArms}">
+        </div>`
+        imgs.innerHTML = htmlDataOne
     }
 
 </script>
