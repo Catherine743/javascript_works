@@ -16,19 +16,41 @@
         <h1 class="text-3xl font-bold">My Bank</h1>
         <div>
             <input type="text" class="bg-sky-500 p-2 rounded-xl shadow-sm shadow-white w-1/2"
-                placeholder="Account number">
+                placeholder="Account number" id="accNo">
         </div>
         <div>
-            <input type="text" class="bg-sky-500 p-2 rounded-xl shadow-sm shadow-white w-1/2" placeholder="Password">
+            <input type="password" class="bg-sky-500 p-2 rounded-xl shadow-sm shadow-white w-1/2" placeholder="Password"
+                id="pswd">
         </div>
         <div>
-            <a class="text-center border py-2 px-25 rounded-xl hover:bg-white hover:text-cyan-800"
-                href="./home.html">Login</a>
+            <button class="text-center border rounded-xl hover:bg-white hover:text-cyan-800 w-1/2 py-2"
+                onclick="login()">Login</button>
         </div>
         <div class="space-x-5">
-            <a href="#">Forget password</a><span class="text-sky-500 font-semibold">Or</span><a href="./register.html">Sign up</a>
+            <button  onclick="forgetPswd()">Forget password</button>
+            <span class="text-sky-500 font-semibold">Or</span>
+            <button onclick="signUp()">Sign up</button>
         </div>
     </div>
 </body>
-
+<script>
+    function signUp() {
+        window.location = './register.html'
+    }
+    function forgetPswd() {
+        window.location = './login.html'
+    }
+    function login() {
+        if (accNo.value == localStorage.getItem('ACCOUNT_NO') && pswd.value == localStorage.getItem('PASSWORD')) {
+            alert("Login successful")
+            window.location = './home.html'
+        }
+        else if(!accNo.value || !pswd.value) {
+            alert("Please fill all the fields")
+        }
+        else {
+            alert("Invalid account number or password")
+        }
+    }
+</script>
 </html>

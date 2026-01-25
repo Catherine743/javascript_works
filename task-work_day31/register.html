@@ -15,19 +15,42 @@
         </div>
         <h1 class="text-3xl font-bold">My Bank</h1>
         <div>
-            <input type="text" class="bg-sky-500 p-2 rounded-xl shadow-sm shadow-white w-1/2" placeholder="Username">
+            <input type="text" class="bg-sky-500 p-2 rounded-xl shadow-sm shadow-white w-1/2" placeholder="Username"
+                id="user">
         </div>
         <div>
-            <input type="text" class="bg-sky-500 p-2 rounded-xl shadow-sm shadow-white w-1/2" placeholder="Account number">
+            <input type="text" class="bg-sky-500 p-2 rounded-xl shadow-sm shadow-white w-1/2"
+                placeholder="Account number" id="accNo">
         </div>
         <div>
-            <input type="text" class="bg-sky-500 p-2 rounded-xl shadow-sm shadow-white w-1/2" placeholder="Password">
+            <input type="password" class="bg-sky-500 p-2 rounded-xl shadow-sm shadow-white w-1/2" placeholder="Password"
+                id="pswd">
         </div>
         <div>
-            <a class="text-center border py-2 px-20 rounded-xl hover:bg-white hover:text-cyan-800" href="./login.html">Register</a>
+            <button class="text-center border rounded-xl hover:bg-white hover:text-cyan-800 w-1/2 py-2"
+                onclick="register()">Register</button>
         </div>
-        <a href="./index.html">Sign in</a>
+        <button class="text-center" onclick="signIn()">Sign in</button>
     </div>
 </body>
+<script>
+    function register() {
+        if (!user.value || !accNo.value || !pswd.value) {
+            alert('Please fill all the fields');
+        }
+        else if (accNo.value == localStorage.getItem('ACCOUNT_NO')) {
+            alert('User already registered')
+        }
+        else {
+            localStorage.setItem('ACCOUNT_NO', accNo.value);
+            localStorage.setItem('PASSWORD', pswd.value)
+            alert('Registered successfully')
+            window.location = './login.html'
+        }
+    }
+    function signIn() {
+        window.location = './login.html'
+    }
+</script>
 
 </html>
