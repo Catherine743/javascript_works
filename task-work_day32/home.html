@@ -13,7 +13,8 @@
         <h2 class="text-3xl flex justify-center items-center text-blue-900" id="head">Welcome User</h2>
         <h1 class="text-4xl flex justify-center items-center h-[100px] text-green-700 font-bold">Smart Wallet</h1>
         <div class="flex justify-center items-center  w-[100px]">
-            <button class="border text-red-700 rounded-md w-full h-[40px] hover:bg-red-700 hover:text-white" onclick="logout()">Log
+            <button class="border text-red-700 rounded-md w-full h-[40px] hover:bg-red-700 hover:text-white"
+                onclick="logout()">Log
                 out</button>
         </div>
     </div>
@@ -133,11 +134,41 @@
     }
     incomeList = JSON.parse(localStorage.getItem("INCOME_LIST")) || [];
     expenseList = JSON.parse(localStorage.getItem("EXPENSE_LIST")) || [];
+    totalExpense = Number(localStorage.getItem("EXPENSE")) || 0;
+    curBal = JSON.parse(localStorage.getItem('BALANCE')) || 0;
+    balance.innerHTML = `Rs ${curBal} /-`;
+    expense.innerHTML = `Rs ${totalExpense} /-`;
+    function renderIncomeTable() {
+        incomeTable.innerHTML = "";
+        incomeList.forEach(item => {
+        incomeTable.innerHTML += `
+        <tr class = "text-center border-b-2 border-green-700 h-[30px]">
+           <td>${item.type}</td>
+           <td>+${item.amount}</td>
+           <td>${item.balance}</td>
+           <td>${item.time}</td>
+        </tr>
+        `
+        });
+    }
+    function renderExpenseTable() {
+        expenseTable.innerHTML = "";
+        expenseList.forEach(item => {
+            expenseTable.innerHTML += `
+            <tr class = "text-center border-b-2 border-green-700 h-[30px]">
+               <td>${item.type}</td>
+               <td>-${item.amount}</td>
+               <td>${item.balance}</td>
+               <td>${item.time}</td>
+            </tr>
+        `
+        });
+    }
     function addIncome() {
         if (incomeAmt.value > 0) {
             amountNum = Number(incomeAmt.value);
             alert(`Successfully deposited: ${amountNum}`);
-            curBal = JSON.parse(localStorage.getItem('BALANCE')); // Number(localStorage.getItem('BALANCE')) || 0
+            curBal = JSON.parse(localStorage.getItem('BALANCE')) || 0; // Number(localStorage.getItem('BALANCE')) || 0
             sum = curBal + amountNum;
             localStorage.setItem('BALANCE', sum);
             dateTime = getCurrentDateTime()
@@ -152,14 +183,6 @@
             balance.innerHTML = `
             Rs ${sum} /-
             `
-            incomeTable.innerHTML += `
-                <tr class = "text-center border-b-2 border-green-700 h-[30px]">
-                   <td>${incomeType.value}</td>
-                   <td>+${amountNum}</td>
-                   <td>${sum}</td>
-                   <td>${dateTime}</td>
-                </tr>
-            `
             incomeAmt.value = '';
             incomeType.value = '';
         }
@@ -170,12 +193,9 @@
             alert("Please fill all the fields")
         }
     }
-    sum = 0;
     function addExpense() {
         if (expenseAmt.value > 0) {
             amountNum = Number(expenseAmt.value);
-            totalExpense = Number(localStorage.getItem("EXPENSE"))
-            curBal = JSON.parse(localStorage.getItem('BALANCE'));
             if (curBal >= amountNum) {
                 newBal = curBal - amountNum;
                 totalExpense += amountNum;
@@ -196,14 +216,6 @@
                 `
                 balance.innerHTML = `
                 Rs ${newBal}
-                `
-                expenseTable.innerHTML += `
-                <tr class = "text-center border-b-2 border-green-700 h-[30px]">
-                   <td>${expenseType.value}</td>
-                   <td>-${amountNum}</td>
-                   <td>${newBal}</td>
-                   <td>${dateTime}</td>
-                </tr>
                 `
                 expenseAmt.value = '';
                 expenseType.value = '';
@@ -231,6 +243,8 @@
     function logout() {
         window.location = './index.html'
     }
+    renderIncomeTable();
+    renderExpenseTable();
 </script>
 
 </html>
