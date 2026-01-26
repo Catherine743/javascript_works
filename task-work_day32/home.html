@@ -8,12 +8,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
+<body class="h-[1000px]">
     <div class="flex justify-between px-5">
-        <h2 class="text-3xl flex justify-center items-center text-blue-900">Welcome User</h2>
+        <h2 class="text-3xl flex justify-center items-center text-blue-900" id="head">Welcome User</h2>
         <h1 class="text-4xl flex justify-center items-center h-[100px] text-green-700 font-bold">Smart Wallet</h1>
         <div class="flex justify-center items-center  w-[100px]">
-            <button class="border text-red-700 rounded-md w-full h-[40px] hover:bg-red-700 hover:text-white">Log out</button>
+            <button class="border text-red-700 rounded-md w-full h-[40px] hover:bg-red-700 hover:text-white" onclick="logout()">Log
+                out</button>
         </div>
     </div>
     <div class="flex justify-center">
@@ -43,7 +44,8 @@
                     <input class="w-full p-2 rounded-md border-2 border-sky-500 placeholder:font-bold" type="text"
                         placeholder="Enter Amount" id="incomeAmt">
                 </div>
-                <button class="w-full border h-[40px] rounded-lg bg-green-700 text-white hover:bg-green-900">Add Income</button>
+                <button class="w-full border h-[40px] rounded-lg bg-green-700 text-white hover:bg-green-900"
+                    onclick="addIncome()">Add Income</button>
             </div>
         </div>
         <div class="w-1/2 space-y-5">
@@ -67,14 +69,16 @@
                 </div>
                 <div>
                     <input class="w-full p-2 rounded-md border-2 border-sky-500 placeholder:font-bold" type="text"
-                        placeholder="Enter Amount">
+                        placeholder="Enter Amount" id="expenseAmt">
                 </div>
-                <button class="w-full border h-[40px] rounded-lg bg-red-700 text-white hover:bg-red-900">Add Expense</button>
+                <button class="w-full border h-[40px] rounded-lg bg-red-700 text-white hover:bg-red-900"
+                    onclick="addExpense()">Add Expense</button>
             </div>
         </div>
     </div>
     <div class="flex justify-center my-10">
-        <button class="bg-yellow-500 text-white rounded-md text-center w-[100px] h-[40px] hover:bg-yellow-600">Clear All</button>
+        <button class="bg-yellow-500 text-white rounded-md text-center w-[100px] h-[40px] hover:bg-yellow-600"
+            onclick="clearBtn()">Clear All</button>
     </div>
     <h2 class="text-3xl text-center font-bold text-blue-700">Transaction History</h2>
     <div class="flex justify-center">
@@ -86,7 +90,7 @@
                 <h3 class="text-2xl text-blue-700 text-center font-semibold">Income</h3>
                 <table class="w-full h-[30px] text-right">
                     <thead class="bg-orange-200 border-b-5 border-red-400">
-                        <tr class="flex justify-around">
+                        <tr class="text-center">
                             <th>Type</th>
                             <th>Amount</th>
                             <th>Balance</th>
@@ -100,21 +104,133 @@
         <div class="w-1/2 flex justify-center">
             <div class="w-3/4 space-y-5">
                 <h3 class="text-2xl text-blue-700 text-center font-semibold">Expense</h3>
-            <table class="w-full h-[30px] text-right">
-                <thead class="bg-orange-200 border-b-5 border-red-400">
-                    <tr class="flex justify-around">
-                        <th>Type</th>
-                        <th>Amount</th>
-                        <th>Balance</th>
-                        <th>Date & Time</th>
-                    </tr>
-                </thead>
-                <tbody id="expenseTable"></tbody>
-            </table>
+                <table class="w-full">
+                    <thead class="bg-orange-200 border-b-5 border-red-400">
+                        <tr class="text-center">
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Balance</th>
+                            <th>Date & Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expenseTable"></tbody>
+                </table>
+            </div>
         </div>
-    </div>
 </body>
 <script>
-
+    username = localStorage.getItem('USERNAME')
+    head.innerHTML = `Welcome ${username}`
+    function getCurrentDateTime() {
+        now = new Date();
+        day = now.getDate();
+        month = now.getMonth() + 1; // months start at 0
+        year = now.getFullYear();
+        hours = now.getHours();
+        minutes = now.getMinutes().toString().padStart(2, '0');
+        seconds = now.getSeconds().toString().padStart(2, '0');
+        return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+    }
+    incomeList = JSON.parse(localStorage.getItem("INCOME_LIST")) || [];
+    expenseList = JSON.parse(localStorage.getItem("EXPENSE_LIST")) || [];
+    function addIncome() {
+        if (incomeAmt.value > 0) {
+            amountNum = Number(incomeAmt.value);
+            alert(`Successfully deposited: ${amountNum}`);
+            curBal = JSON.parse(localStorage.getItem('BALANCE')); // Number(localStorage.getItem('BALANCE')) || 0
+            sum = curBal + amountNum;
+            localStorage.setItem('BALANCE', sum);
+            dateTime = getCurrentDateTime()
+            incomeObj = {
+                type: incomeType.value,
+                amount: amountNum,
+                balance: sum,
+                time: dateTime
+            };
+            incomeList.push(incomeObj);
+            localStorage.setItem("INCOME_LIST", JSON.stringify(incomeList));
+            balance.innerHTML = `
+            Rs ${sum} /-
+            `
+            incomeTable.innerHTML += `
+                <tr class = "text-center border-b-2 border-green-700 h-[30px]">
+                   <td>${incomeType.value}</td>
+                   <td>+${amountNum}</td>
+                   <td>${sum}</td>
+                   <td>${dateTime}</td>
+                </tr>
+            `
+            incomeAmt.value = '';
+            incomeType.value = '';
+        }
+        else if (incomeAmt.value == 0) {
+            alert("Please enter a valid amount")
+        }
+        else if (!incomeType.value || !incomeAmt.value) {
+            alert("Please fill all the fields")
+        }
+    }
+    sum = 0;
+    function addExpense() {
+        if (expenseAmt.value > 0) {
+            amountNum = Number(expenseAmt.value);
+            totalExpense = Number(localStorage.getItem("EXPENSE"))
+            curBal = JSON.parse(localStorage.getItem('BALANCE'));
+            if (curBal >= amountNum) {
+                newBal = curBal - amountNum;
+                totalExpense += amountNum;
+                localStorage.setItem("EXPENSE", totalExpense);
+                localStorage.setItem('BALANCE', newBal);
+                dateTime = getCurrentDateTime()
+                expenseObj = {
+                    type: expenseType.value,
+                    amount: amountNum,
+                    balance: newBal,
+                    time: dateTime
+                };
+                expenseList.push(expenseObj);
+                localStorage.setItem("EXPENSE_LIST", JSON.stringify(expenseList));
+                alert(`Successfully withdrawn: ${amountNum}`);
+                expense.innerHTML = `
+                Rs ${totalExpense} /-
+                `
+                balance.innerHTML = `
+                Rs ${newBal}
+                `
+                expenseTable.innerHTML += `
+                <tr class = "text-center border-b-2 border-green-700 h-[30px]">
+                   <td>${expenseType.value}</td>
+                   <td>-${amountNum}</td>
+                   <td>${newBal}</td>
+                   <td>${dateTime}</td>
+                </tr>
+                `
+                expenseAmt.value = '';
+                expenseType.value = '';
+            }
+            else {
+                alert("Insufficient balance")
+            }
+        }
+        else if (expenseAmt.value == 0) {
+            alert("Please enter a valid amount")
+        }
+        else if (!expenseAmt.value || !expenseType.value) {
+            alert("Please fill all the fields")
+        }
+    }
+    function clearBtn() {
+        if (confirm("Are you sure you want clear all data ?")) {
+            localStorage.clear();
+            alert("Cleared all data successfully")
+            location.reload();
+            balance.innerHTML = `Rs 0 /-`;
+            expense.innerHTML = `Rs 0 /-`;
+        }
+    }
+    function logout() {
+        window.location = './index.html'
+    }
 </script>
+
 </html>
