@@ -54,6 +54,9 @@
         else if(!user.value || !pswd.value) {
             alert("Please fill all the fields")
         }
+        else if (user.value != localStorage.getItem('USERNAME') && pswd.value != localStorage.getItem('PASSWORD')) {
+            alert("Invalid username or password")
+        }
         else {
             alert("Not found, please register")
         }

@@ -26,7 +26,7 @@
                     class="space-y-3 bg-orange-300 w-1/3 text-center h-[150px] flex justify-center items-center rounded-lg">
                     <div class="space-y-5">
                         <h3 class="text-3xl">Total Balance</h3>
-                        <h3 class="text-3xl">Rs <span id="income">0</span> /-</h3>
+                        <h3 class="text-3xl" id="balance">Rs 0 /-</h3>
                     </div>
                 </div>
             </div>
@@ -37,11 +37,11 @@
             <div class="mx-auto space-y-5 w-3/4">
                 <div>
                     <input class="w-full p-2 rounded-md border-2 border-sky-500 placeholder:font-bold" type="text"
-                        placeholder="Enter Income Type">
+                        placeholder="Enter Income Type" id="incomeType">
                 </div>
                 <div>
                     <input class="w-full p-2 rounded-md border-2 border-sky-500 placeholder:font-bold" type="text"
-                        placeholder="Enter Amount">
+                        placeholder="Enter Amount" id="incomeAmt">
                 </div>
                 <button class="w-full border h-[40px] rounded-lg bg-green-700 text-white hover:bg-green-900">Add Income</button>
             </div>
@@ -52,7 +52,7 @@
                     class="space-y-3 bg-green-300 w-1/3 text-center h-[150px] flex justify-center items-center rounded-lg">
                     <div class="space-y-5">
                         <h3 class="text-3xl">Total Expenses</h3>
-                        <h3 class="text-3xl">Rs <span id="income">0</span> /-</h3>
+                        <h3 class="text-3xl" id="expense">Rs 0 /-</h3>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
             <div class="mx-auto space-y-5 w-3/4">
                 <div>
                     <input class="w-full p-2 rounded-md border-2 border-sky-500 placeholder:font-bold" type="text"
-                        placeholder="Enter Expense Type">
+                        placeholder="Enter Expense Type" id="expenseType">
                 </div>
                 <div>
                     <input class="w-full p-2 rounded-md border-2 border-sky-500 placeholder:font-bold" type="text"
