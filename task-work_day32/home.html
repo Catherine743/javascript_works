@@ -134,8 +134,8 @@
     }
     incomeList = JSON.parse(localStorage.getItem("INCOME_LIST")) || [];
     expenseList = JSON.parse(localStorage.getItem("EXPENSE_LIST")) || [];
-    totalExpense = Number(localStorage.getItem("EXP_AMOUNT"));
-    curBal = JSON.parse(localStorage.getItem('BAL_AMOUNT')) ;
+    totalExpense = Number(localStorage.getItem("EXP_AMOUNT")) ;
+    curBal = JSON.parse(localStorage.getItem('BAL_AMOUNT')) || 0;
     balance.innerHTML = `Rs ${curBal} /-`;
     expense.innerHTML = `Rs ${totalExpense} /-`;
     function renderIncomeTable() {
