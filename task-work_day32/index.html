@@ -47,14 +47,14 @@
 </body>
 <script>
     function loginBtn() {
-        if (user.value == localStorage.getItem('USERNAME') && pswd.value == localStorage.getItem('PASSWORD')) {
+        if (user.value == localStorage.getItem('USER_NAME') && pswd.value == localStorage.getItem('PASS_WORD')) {
             alert("Login successful")
             window.location = './home.html'
         }
         else if(!user.value || !pswd.value) {
             alert("Please fill all the fields")
         }
-        else if (user.value != localStorage.getItem('USERNAME') && pswd.value != localStorage.getItem('PASSWORD')) {
+        else if (user.value != localStorage.getItem('USER_NAME') && pswd.value != localStorage.getItem('PASS_WORD')) {
             alert("Invalid username or password")
         }
         else {

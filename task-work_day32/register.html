@@ -48,12 +48,12 @@
         if (!user.value || !email.value || !pswd.value) {
             alert('Please fill all the fields');
         }
-        else if (user.value == localStorage.getItem('USERNAME')) {
+        else if (user.value == localStorage.getItem('USER_NAME')) {
             alert('User already registered')
         }
         else {
-            localStorage.setItem('USERNAME', user.value);
-            localStorage.setItem('PASSWORD', pswd.value)
+            localStorage.setItem('USER_NAME', user.value);
+            localStorage.setItem('PASS_WORD', pswd.value)
             alert('Registered successfully')
             window.location = './index.html'
         }

@@ -120,7 +120,7 @@
         </div>
 </body>
 <script>
-    username = localStorage.getItem('USERNAME')
+    username = localStorage.getItem('USER_NAME')
     head.innerHTML = `Welcome ${username}`
     function getCurrentDateTime() {
         now = new Date();
@@ -134,8 +134,8 @@
     }
     incomeList = JSON.parse(localStorage.getItem("INCOME_LIST")) || [];
     expenseList = JSON.parse(localStorage.getItem("EXPENSE_LIST")) || [];
-    totalExpense = Number(localStorage.getItem("EXPENSE"));
-    curBal = JSON.parse(localStorage.getItem('BALANCE')) ;
+    totalExpense = Number(localStorage.getItem("EXP_AMOUNT"));
+    curBal = JSON.parse(localStorage.getItem('BAL_AMOUNT')) ;
     balance.innerHTML = `Rs ${curBal} /-`;
     expense.innerHTML = `Rs ${totalExpense} /-`;
     function renderIncomeTable() {
@@ -169,7 +169,7 @@
             amountNum = Number(incomeAmt.value);
             alert(`Balance amount added successfully: ${amountNum}`);
             curBal += amountNum;
-            localStorage.setItem('BALANCE', curBal);
+            localStorage.setItem('BAL_AMOUNT', curBal);
             dateTime = getCurrentDateTime()
             incomeObj = {
                 type: incomeType.value,
@@ -199,8 +199,8 @@
             if (curBal >= amountNum) {
                 curBal -= amountNum;
                 totalExpense += amountNum;
-                localStorage.setItem("EXPENSE", totalExpense);
-                localStorage.setItem('BALANCE', curBal);
+                localStorage.setItem("EXP_AMOUNT", totalExpense);
+                localStorage.setItem('BAL_AMOUNT', curBal);
                 dateTime = getCurrentDateTime()
                 expenseObj = {
                     type: expenseType.value,
