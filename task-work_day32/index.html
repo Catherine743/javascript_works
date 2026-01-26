@@ -29,21 +29,38 @@
             </div>
             <div class="space-y-5 w-1/2 mx-auto">
                 <div>
-                    <input class="w-full p-2 rounded-md bg-sky-500 text-white" type="text" placeholder="Username">
+                    <input class="w-full p-2 rounded-md bg-sky-500 text-white" type="text" placeholder="Username" id="user">
                 </div>
                 <div>
-                    <input class="w-full p-2 rounded-md bg-sky-500 text-white" type="password" placeholder="Password">
+                    <input class="w-full p-2 rounded-md bg-sky-500 text-white" type="password" placeholder="Password" id="pswd">
                 </div>
                 <div>
-                    <button class="w-full border rounded-md h-[40px] hover:bg-gray-200">Login</button>
+                    <button class="w-full border rounded-md h-[40px] hover:bg-gray-200" onclick="loginBtn()">Login</button>
                 </div>
                 <div class="flex justify-center space-x-10 items-center">
                     <a href="#">Don't have an account?</a>
-                    <button class="font-semibold text-lg hover:text-blue-900 active:border active:border-black px-4 active:rounded-md">Register</button>
+                    <button class="font-semibold text-lg hover:text-blue-900 active:border active:border-black px-4 active:rounded-md" onclick="registerBtn()">Register</button>
                 </div>
             </div>
         </div>
     </div>
 </body>
+<script>
+    function loginBtn() {
+        if (user.value == localStorage.getItem('USERNAME') && pswd.value == localStorage.getItem('PASSWORD')) {
+            alert("Login successful")
+            window.location = './home.html'
+        }
+        else if(!user.value || !pswd.value) {
+            alert("Please fill all the fields")
+        }
+        else {
+            alert("Not found, please register")
+        }
+    }
+    function registerBtn() {
+        window.location = './register.html'
+    }
+</script>
 
 </html>

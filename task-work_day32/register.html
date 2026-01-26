@@ -24,22 +24,42 @@
                 <h3 class="text-4xl font-semibold italic text-center">Register</h3>
                 <div class="w-3/4 space-y-5 mx-auto">
                     <div>
-                        <input class="w-full p-2 rounded-md border-2 border-sky-500" type="text" placeholder="Username">
+                        <input class="w-full p-2 rounded-md border-2 border-sky-500" type="text" placeholder="Username" id="user">
                     </div>
                     <div>
                         <input class="w-full p-2 rounded-md border-2 border-sky-500" type="email"
-                            placeholder="Email Id">
+                            placeholder="Email Id" id="email">
                     </div>
                     <div>
                         <input class="w-full p-2 rounded-md border-2 border-sky-500" type="password"
-                            placeholder="Password">
+                            placeholder="Password" id="pswd">
                     </div>
-                    <div class="text-center">
-                        <button class="bg-green-700 text-white rounded-md p-2">Register</button>
+                    <div class="gap-x-10 flex justify-center">
+                        <button class="bg-green-700 text-white rounded-md p-2 hover:bg-green-900" onclick="registerBtn()">Register</button>
+                        <button class="bg-green-700 text-white rounded-md p-2 hover:bg-green-900" onclick="signIn()">Sign in</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+<script>
+    function registerBtn() {
+        if (!user.value || !email.value || !pswd.value) {
+            alert('Please fill all the fields');
+        }
+        else if (user.value == localStorage.getItem('USERNAME')) {
+            alert('User already registered')
+        }
+        else {
+            localStorage.setItem('USERNAME', user.value);
+            localStorage.setItem('PASSWORD', pswd.value)
+            alert('Registered successfully')
+            window.location = './index.html'
+        }
+    }
+    function signIn() {
+        window.location = './index.html'
+    }
+</script>
 </html>
