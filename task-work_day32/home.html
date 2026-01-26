@@ -154,13 +154,13 @@
     function renderExpenseTable() {
         expenseTable.innerHTML = "";
         expenseList.forEach(item => {
-            expenseTable.innerHTML += `
-            <tr class = "text-center border-b-2 border-green-700 h-[30px]">
-               <td>${item.type}</td>
-               <td>-${item.amount}</td>
-               <td>${item.balance}</td>
-               <td>${item.time}</td>
-            </tr>
+        expenseTable.innerHTML += `
+        <tr class = "text-center border-b-2 border-green-700 h-[30px]">
+           <td>${item.type}</td>
+           <td>-${item.amount}</td>
+           <td>${item.balance}</td>
+           <td>${item.time}</td>
+        </tr>
         `
         });
     }
@@ -169,22 +169,23 @@
             amountNum = Number(incomeAmt.value);
             alert(`Successfully deposited: ${amountNum}`);
             curBal = JSON.parse(localStorage.getItem('BALANCE')) || 0; // Number(localStorage.getItem('BALANCE')) || 0
-            sum = curBal + amountNum;
-            localStorage.setItem('BALANCE', sum);
+            curBal += amountNum;
+            localStorage.setItem('BALANCE', curBal);
             dateTime = getCurrentDateTime()
             incomeObj = {
                 type: incomeType.value,
                 amount: amountNum,
-                balance: sum,
+                balance: curBal,
                 time: dateTime
             };
             incomeList.push(incomeObj);
             localStorage.setItem("INCOME_LIST", JSON.stringify(incomeList));
             balance.innerHTML = `
-            Rs ${sum} /-
+            Rs ${curBal} /-
             `
             incomeAmt.value = '';
             incomeType.value = '';
+            renderIncomeTable();
         }
         else if (incomeAmt.value == 0) {
             alert("Please enter a valid amount")
@@ -197,15 +198,15 @@
         if (expenseAmt.value > 0) {
             amountNum = Number(expenseAmt.value);
             if (curBal >= amountNum) {
-                newBal = curBal - amountNum;
+                curBal -= amountNum;
                 totalExpense += amountNum;
                 localStorage.setItem("EXPENSE", totalExpense);
-                localStorage.setItem('BALANCE', newBal);
+                localStorage.setItem('BALANCE', curBal);
                 dateTime = getCurrentDateTime()
                 expenseObj = {
                     type: expenseType.value,
                     amount: amountNum,
-                    balance: newBal,
+                    balance: curBal,
                     time: dateTime
                 };
                 expenseList.push(expenseObj);
@@ -215,7 +216,7 @@
                 Rs ${totalExpense} /-
                 `
                 balance.innerHTML = `
-                Rs ${newBal}
+                Rs ${curBal}
                 `
                 expenseAmt.value = '';
                 expenseType.value = '';
@@ -223,6 +224,7 @@
             else {
                 alert("Insufficient balance")
             }
+            renderExpenseTable();
         }
         else if (expenseAmt.value == 0) {
             alert("Please enter a valid amount")
