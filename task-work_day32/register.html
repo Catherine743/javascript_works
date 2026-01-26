@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    
+
+<body class="text-blue-500">
+    <div class=" h-[200px] flex items-center justify-center w-3/4 mx-auto bg-blue-300/50 rounded-lg">
+        <div class="text-center space-y-5">
+            <h1 class="text-4xl font-semibold">Smart Wallet</h1>
+            <h3 class="italic text-3xl">Steering Family Finances as One ...</h3>
+        </div>
+    </div>
+    <div class="flex">
+        <div class="w-1/2">
+            <img class="w-full" src="./images/wallet_img_register.jpg" alt="">
+        </div>
+        <div class="w-1/2 flex items-center">
+            <div class="w-full space-y-10">
+                <h3 class="text-4xl font-semibold italic text-center">Register</h3>
+                <div class="w-3/4 space-y-5 mx-auto">
+                    <div>
+                        <input class="w-full p-2 rounded-md border-2 border-sky-500" type="text" placeholder="Username">
+                    </div>
+                    <div>
+                        <input class="w-full p-2 rounded-md border-2 border-sky-500" type="email"
+                            placeholder="Email Id">
+                    </div>
+                    <div>
+                        <input class="w-full p-2 rounded-md border-2 border-sky-500" type="password"
+                            placeholder="Password">
+                    </div>
+                    <div class="text-center">
+                        <button class="bg-green-700 text-white rounded-md p-2">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
