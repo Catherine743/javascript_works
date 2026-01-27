@@ -195,8 +195,8 @@
     }
     function addExpense() {
         if (expenseAmt.value > 0) {
+            amountNum = Number(expenseAmt.value);
             if (curBal >= amountNum) {
-                amountNum = Number(expenseAmt.value);
                 curBal -= amountNum;
                 totalExpense += amountNum;
                 localStorage.setItem("EXP_AMOUNT", totalExpense);
@@ -219,11 +219,11 @@
                 `
                 expenseAmt.value = '';
                 expenseType.value = '';
+                renderExpenseTable();
             }
             else {
                 alert("Insufficient balance")
             }
-            renderExpenseTable();
         }
         else if (expenseAmt.value == 0) {
             alert("Please enter a valid amount")
