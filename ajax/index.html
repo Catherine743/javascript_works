@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="space-y-5">
+    <h1 class="text-center text-blue-900 text-3xl font-semibold">ToDo Data</h1>
+    <div class="flex justify-center">
+        <table class="text-blue-900">
+            <thead>
+                <tr class="border-3 border-blue-900 ">
+                    <th class="border-r-2 border-blue-900 text-center w-20 h-10">userId</th>
+                    <th class="border-r-2 border-blue-900 text-center w-20 h-10">Name</th>
+                    <th class="border-r-2 border-blue-900 text-center w-50 h-10">Email</th>
+                    <th class="w-20 h-10 text-center">Address</th>
+                </tr>
+            </thead>
+            <tbody id="result"></tbody>
+        </table>
+    </div>
+</body>
+<script>
+    // Ajax API CALL
+    reply = new XMLHttpRequest();
+
+    reply.open('get','https://jsonplaceholder.typicode.com/users');
+
+    reply.send();
+
+    reply.onreadystatechange = () => {
+        if (reply.readyState == 4) {
+            userArr = JSON.parse(reply.responseText);
+            displayData(userArr);
+        }
+    }
+
+    function displayData(userArr) {
+        for (let user of userArr) {
+            htmlData = `
+            <tr class="border-3 border-blue-900 ">
+                    <td class="border-r-2 border-blue-900 text-center w-30 h-10">${user.id}</td>
+                    <td class="border-r-2 border-blue-900 text-center w-50 h-10">${user.name}</td>
+                    <td class="border-r-2 border-blue-900 text-center w-60 h-10">${user.email}</td>
+                    <td class="w-100 h-10 text-center">${user.address.street}, ${user.address.suite}, ${user.address.city} - ${user.address.zipcode}</td>
+            </tr>
+            `
+            result.innerHTML += htmlData
+        }
+    }
+</script>
+</html>
