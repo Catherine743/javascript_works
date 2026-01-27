@@ -48,7 +48,7 @@
         else if(!accNo.value || !pswd.value) {
             alert("Please fill all the fields")
         }
-        else if (accNo.value != localStorage.getItem('ACCOUNT_NO') && pswd.value != localStorage.getItem('PASSWORD')) {
+        else if (accNo.value != localStorage.getItem('ACCOUNT_NO') || pswd.value != localStorage.getItem('PASSWORD')) {
             alert("Invalid account number or password")
         }
     }
