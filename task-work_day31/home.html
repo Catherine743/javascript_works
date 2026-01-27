@@ -78,7 +78,7 @@
         else if (!depAccNo.value || !depAmount.value) {
             alert("Please fill all the fields")
         }
-        else if (depAccNo.value == localStorage.getItem('ACCOUNT_NO')) {
+        else if (depAccNo.value != localStorage.getItem('ACCOUNT_NO')) {
             alert("Invalid account number")
         }
     }
