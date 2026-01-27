@@ -195,8 +195,8 @@
     }
     function addExpense() {
         if (expenseAmt.value > 0) {
-            amountNum = Number(expenseAmt.value);
             if (curBal >= amountNum) {
+                amountNum = Number(expenseAmt.value);
                 curBal -= amountNum;
                 totalExpense += amountNum;
                 localStorage.setItem("EXP_AMOUNT", totalExpense);
