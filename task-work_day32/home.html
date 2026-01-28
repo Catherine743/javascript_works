@@ -167,7 +167,7 @@
     function addIncome() {
         if (incomeAmt.value > 0) {
             amountNum = Number(incomeAmt.value);
-            alert(`Balance amount added successfully: ${amountNum}`);
+            alert(`Income amount added successfully: ${amountNum}`);
             curBal += amountNum;
             localStorage.setItem('BAL_AMOUNT', curBal);
             dateTime = getCurrentDateTime()
