@@ -165,7 +165,7 @@
         });
     }
     function addIncome() {
-        if (incomeAmt.value > 0) {
+        if (incomeAmt.value > 0 && incomeType.value) {
             amountNum = Number(incomeAmt.value);
             alert(`Income amount added successfully: ${amountNum}`);
             curBal += amountNum;
@@ -186,15 +186,12 @@
             incomeType.value = '';
             renderIncomeTable();
         }
-        else if (incomeAmt.value == 0) {
-            alert("Please enter a valid amount")
-        }
         else if (!incomeType.value || !incomeAmt.value) {
             alert("Please fill all the fields")
         }
     }
     function addExpense() {
-        if (expenseAmt.value > 0) {
+        if (expenseAmt.value > 0 && expenseType.value) {
             amountNum = Number(expenseAmt.value);
             if (curBal >= amountNum) {
                 curBal -= amountNum;
@@ -224,9 +221,6 @@
             else {
                 alert("Insufficient balance")
             }
-        }
-        else if (expenseAmt.value == 0) {
-            alert("Please enter a valid amount")
         }
         else if (!expenseAmt.value || !expenseType.value) {
             alert("Please fill all the fields")
