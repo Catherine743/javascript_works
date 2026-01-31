@@ -30,17 +30,17 @@
         response = new XMLHttpRequest();
 
         // 2. Connect API Call
-        response.open('get', 'https://jsonplaceholder.typicode.com/todos');
+        response.open('get', 'https://jsonplaceholder.typicode.com/todos'); // 1. Generated Request (open), 2. Request received to the header, 3. Data loaded, 4. Done -> get response from the data 
 
-        // 3. Send
+        // 3. Send // The request is gettng ready to go
         response.send();
 
-        // 4. Set Onreadystate Change
+        // 4. Set Onreadystate Change // Display data by identifying state change using XML Request
 
-        response.onreadystatechange = () => {
+        response.onreadystatechange = () => { // call 
             if (response.readyState == 4) {
                 if (response.status > 199 && response.status < 300) {
-                    // console.log(response.responseText);
+                    // console.log(response.responseText); // JSON format data(key, value is in string)-> JS Object
                     todoArray = JSON.parse(response.responseText);
                     // console.log(todoArray)
                     displayData(todoArray);

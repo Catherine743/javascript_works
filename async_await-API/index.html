@@ -11,7 +11,7 @@
 <body>
     <div class="p-5">
         <h1 class="text-3xl text-center">Post Details</h1>
-        <div id="result" class="w-full"></div>
+        <div id="result" class="w-full grid grid-cols-3"></div>
     </div>
 </body>
 <script>
@@ -34,7 +34,7 @@
         console.log(posts);
 
         cardsHtml = posts.map(post => `
-            <div class = 'p-4 m-4 border-2 border-blue-900 rounded-lg w-1/2'>
+            <div class = 'p-4 m-4 border-2 border-blue-900 rounded-lg'>
               <h2 class = 'text-xl font-semibold'>${post.title}</h2>
               <p> ${post.body}</p>
              </div>
