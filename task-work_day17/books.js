@@ -118,7 +118,7 @@ console.log("Name of the books by Benyamin is",bookAuthor);
 
 // Retrieve the genre of book "Khasakkinte Ithihasam"
 
-bookGenre = books.filter(b => b.title == "Khasakkinte Ithihasam").map(b => b.genre)
+bookGenre = books.filter(b => b.title == "Khasakkinte Ithihasam").map(b => b.genre)[0] 
 console.log("Genre of the book of Khasakkinte Ithihasam is", bookGenre);
 
 // Retrieve the name of the book whose genre is Mystery/Thriller
