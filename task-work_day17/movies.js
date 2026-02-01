@@ -191,7 +191,7 @@ console.log(movThrill);
 
 // create a new array containing only movie titles and prices
 
-movie_Price = movies.map(m => ([m.title, m.price]));
+movie_Price = movies.map(m => [m.title, m.price]);
 console.log(movie_Price);
 
 // movie_Price = movies.map(m => ({title : m.title, price : m.price}));
