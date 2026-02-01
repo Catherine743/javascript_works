@@ -186,7 +186,7 @@ console.log(movAlpha);
 
 // first movie that belongs to the genre "Thriller"
 
-movThrill = movies.filter(m => m.genre == "Thriller").map(m => m.title);
+movThrill = movies.filter(m => m.genre == "Thriller").map(m => m.title)[0];
 console.log(movThrill);
 
 // create a new array containing only movie titles and prices
