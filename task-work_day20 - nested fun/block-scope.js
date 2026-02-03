@@ -1,8 +1,8 @@
 function outerFunction() {
-    let outerVar = "Outer function";
+    outerVar = "Outer function";
 
     function innerFunction() {
-        let innerVar = "Inner function";
+        innerVar = "Inner function";
 
         console.log(outerVar); 
         console.log(innerVar); 
