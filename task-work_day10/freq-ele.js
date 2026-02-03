@@ -23,7 +23,7 @@ for (let n of arr) {
     }
 }
 
-for (let i = 0; i < freq.length; i++) {
+for (i = 0; i < freq.length; i++) {
     if (i > 0) {
         freqArr = freqArr + ", ";
     }
