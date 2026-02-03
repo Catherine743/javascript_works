@@ -1,5 +1,3 @@
-str = "malayalam";
-
 function palindrome(str){
     rev = "";
     for(i = str.length - 1; i >= 0; i--){
@@ -13,4 +11,4 @@ function palindrome(str){
     }
 }
 
-console.log(palindrome(str));
+console.log(palindrome("malayalam"));
