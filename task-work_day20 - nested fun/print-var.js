@@ -1,5 +1,5 @@
 function outerFunction() {
-    let message = "Hello World";
+    message = "Hello World";
     function innerFunction() {
         console.log(message); 
     }
