@@ -1,4 +1,4 @@
-// pro is onject of promise class
+// pro is object of promise class
 
 var pro = new Promise((resolve,reject) => {
     lotNum = 1;
