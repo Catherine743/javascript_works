@@ -8,7 +8,7 @@ function outer() {
     return inner;
 }
 
-const counter = outer();
+counter = outer();
 
 console.log(counter()); 
 console.log(counter()); 
