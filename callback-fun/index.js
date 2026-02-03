@@ -8,7 +8,7 @@ function cube(callback, n) {
     return callback(n) * n;
 }
 
-// console.log(cube(callback,3));
+console.log(cube(callback,3));
 
 function sayHello() {
     console.log('Hello');
