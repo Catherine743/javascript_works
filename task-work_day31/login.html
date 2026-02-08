@@ -9,27 +9,27 @@
 </head>
 
 <body class="flex justify-center items-center h-screen">
-    <div class="bg-cyan-800 w-1/3 text-center text-white p-5 space-y-7 rounded-lg">
+    <div class="bg-cyan-800 lg:w-1/3 md:w-1/2 w-3/4 text-center text-white p-5 space-y-7 rounded-lg">
         <div class="border-3 rounded-full mx-auto w-20 h-20 flex justify-center items-center shadow-sm shadow-white">
             <img class="w-16" src="./images/Bank_logo.png" alt="">
         </div>
         <h1 class="text-3xl font-bold">My Bank</h1>
         <div>
-            <input type="text" class="bg-sky-500 p-2 rounded-xl shadow-sm shadow-white w-1/2"
+            <input type="text" class="bg-sky-500 p-2 rounded-xl shadow-sm shadow-white lg:w-3/4 md:w-1/2 w-full"
                 placeholder="Account number" id="accNo">
         </div>
         <div>
-            <input type="password" class="bg-sky-500 p-2 rounded-xl shadow-sm shadow-white w-1/2" placeholder="Password"
+            <input type="password" class="bg-sky-500 p-2 rounded-xl shadow-sm shadow-white lg:w-3/4 md:w-1/2 w-full" placeholder="Password"
                 id="pswd">
         </div>
         <div>
             <button class="text-center border rounded-xl hover:bg-white hover:text-cyan-800 w-1/2 py-2"
                 onclick="login()">Login</button>
         </div>
-        <div class="space-x-5">
-            <button  onclick="forgetPswd()">Forget password</button>
+        <div class="lg:space-x-5 space-x-5 w-full lg:w-none md:w-none">
+            <button  onclick="forgetPswd()" >Forget password</button>
             <span class="text-sky-500 font-semibold">Or</span>
-            <button onclick="signUp()">Sign up</button>
+            <button onclick="signUp()" >Sign up</button>
         </div>
     </div>
 </body>
