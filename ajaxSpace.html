@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceX Launches (AJAX)</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="space-y-5 p-5">
+    <h1 class="text-center text-blue-900 text-3xl font-semibold">SpaceX Launch Info</h1>
+
+    <div class="flex justify-center mb-4">
+        <button class="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-700" onclick = "nextLaunch()">
+            Next Upcoming Launch
+        </button>
+    </div>
+
+    <div class="flex justify-center">
+        <table class="text-blue-900 border border-blue-900">
+            <thead>
+                <tr class="border-b-2 border-blue-900">
+                    <th class="px-4 py-2">Mission Name</th>
+                    <th class="px-4 py-2">Launch Date</th>
+                    <th class="px-4 py-2">Rocket Name</th>
+                    <th class="px-4 py-2">YouTube Link</th>
+                </tr>
+            </thead>
+            <tbody id="result"></tbody>
+        </table>
+    </div>
+</body>
+<script>
+result = document.getElementById('result');
+
+function fetchLaunch(url) {
+    // Launch data AJAX
+    launchReq = new XMLHttpRequest();
+    launchReq.open('GET', url);
+    launchReq.send();
+
+    launchReq.onreadystatechange = function() {
+        if (launchReq.readyState == 4) {
+            launchData = JSON.parse(launchReq.responseText);
+
+            // Rocket data AJAX
+            rocketReq = new XMLHttpRequest();
+            rocketReq.open('GET', `https://api.spacexdata.com/v4/rockets/${launchData.rocket}`);
+            rocketReq.send();
+
+            rocketReq.onreadystatechange = function() {
+                if (rocketReq.readyState == 4) {
+                    rocketData = JSON.parse(rocketReq.responseText);
+
+                    // Display in table
+                    result.innerHTML = `
+                        <tr class="border-b border-blue-900">
+                            <td class="px-4 py-2">${launchData.name}</td>
+                            <td class="px-4 py-2">${new Date(launchData.date_utc).toLocaleString()}</td>
+                            <td class="px-4 py-2">${rocketData.name}</td>
+                            <td class="px-4 py-2">
+                                ${launchData.links.youtube_id 
+                                    ? `<a href="https://www.youtube.com/watch?v=${launchData.links.youtube_id}" target="_blank" class="text-blue-700 underline">Watch</a>` 
+                                    : 'N/A'}
+                            </td>
+                        </tr>
+                    `;
+                }
+            }
+        }
+    }
+}
+
+// Initial load: latest launch
+fetchLaunch('https://api.spacexdata.com/v4/launches/latest');
+
+// Button click: next upcoming launch
+function nextLaunch() {
+    fetchLaunch('https://api.spacexdata.com/v4/launches/next'); 
+}
+
+</script>
+</html>
