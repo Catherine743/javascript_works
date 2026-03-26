@@ -2,8 +2,8 @@ function rotateMatrix(matrix) {
   const n = matrix.length;
 
   // Transpose
-  for (let i = 0; i < n; i++) {
-    for (let j = i; j < n; j++) {
+  for (i = 0; i < n; i++) {
+    for (j = i; j < n; j++) {
       [matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
     }
   }
