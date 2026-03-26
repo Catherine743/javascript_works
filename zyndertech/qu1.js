@@ -6,7 +6,12 @@ function firstRepeating(arr) {
 
     // count frequency
     for (i = 0; i < arr.length; i++) {
-        map[arr[i]] = (map[arr[i]] || 0) + 1;
+        if(map[arr[i]]){
+            map[arr[i]]++;
+        }
+        else{
+            map[arr[i]] = 1;
+        }
     }
 
     // return first element with freq > 1
