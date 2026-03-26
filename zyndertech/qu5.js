@@ -1,7 +1,7 @@
 function firstGreaterKey(obj) {
-  let keys = Object.keys(obj);
+  keys = Object.keys(obj);
 
-  for (let i = 1; i < keys.length; i++) {
+  for (i = 1; i < keys.length; i++) {
     if (obj[keys[i]] > obj[keys[i - 1]]) {
       return keys[i];
     }
